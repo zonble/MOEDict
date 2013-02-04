@@ -1,0 +1,13 @@
+*.pbxuser
+*.mode1v3
+*.tm_build_errors
+*.wdgtuser
+*.perspectivev3
+*.pyc
+*.xcworkspace
+*.ipa
+*.xls
+*.swp
+xcuserdata
+.DS_Store
+*.sqlite3

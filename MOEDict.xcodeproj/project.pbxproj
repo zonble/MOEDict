@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F416C006BE001AAA77 /* UIKit.framework */; };
+		D478A1F716C006BE001AAA77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F616C006BE001AAA77 /* Foundation.framework */; };
+		D478A1F916C006BE001AAA77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F816C006BE001AAA77 /* CoreGraphics.framework */; };
+		D478A1FF16C006BF001AAA77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D478A1FD16C006BF001AAA77 /* InfoPlist.strings */; };
+		D478A20116C006BF001AAA77 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A20016C006BF001AAA77 /* main.m */; };
+		D478A20516C006BF001AAA77 /* MDAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A20416C006BF001AAA77 /* MDAppDelegate.m */; };
+		D478A20716C006BF001AAA77 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D478A20616C006BF001AAA77 /* Default.png */; };
+		D478A20916C006BF001AAA77 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D478A20816C006BF001AAA77 /* Default@2x.png */; };
+		D478A20B16C006BF001AAA77 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D478A20A16C006BF001AAA77 /* Default-568h@2x.png */; };
+		D478A21316C006BF001AAA77 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A21216C006BF001AAA77 /* SenTestingKit.framework */; };
+		D478A21416C006BF001AAA77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F416C006BE001AAA77 /* UIKit.framework */; };
+		D478A21516C006BF001AAA77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F616C006BE001AAA77 /* Foundation.framework */; };
+		D478A21D16C006BF001AAA77 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D478A21B16C006BF001AAA77 /* InfoPlist.strings */; };
+		D478A22016C006BF001AAA77 /* MOEDictTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A21F16C006BF001AAA77 /* MOEDictTests.m */; };
+		D478A22C16C007EB001AAA77 /* ObjSqliteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A22A16C007EB001AAA77 /* ObjSqliteDB.m */; };
+		D478A22D16C007EB001AAA77 /* ObjSqliteStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A22B16C007EB001AAA77 /* ObjSqliteStatement.m */; };
+		D478A23116C00828001AAA77 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A23016C00828001AAA77 /* libsqlite3.dylib */; };
+		D478A23416C00852001AAA77 /* MDDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A23316C00852001AAA77 /* MDDatabase.m */; };
+		D478A23616C00973001AAA77 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D478A23516C00973001AAA77 /* db.sqlite3 */; };
+		D478A23716C0098E001AAA77 /* ObjSqliteDB.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A22A16C007EB001AAA77 /* ObjSqliteDB.m */; };
+		D478A23816C0098E001AAA77 /* ObjSqliteStatement.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A22B16C007EB001AAA77 /* ObjSqliteStatement.m */; };
+		D478A23916C00996001AAA77 /* MDDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A23316C00852001AAA77 /* MDDatabase.m */; };
+		D478A23A16C00B5A001AAA77 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A23016C00828001AAA77 /* libsqlite3.dylib */; };
+		D478A23B16C00B82001AAA77 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D478A23516C00973001AAA77 /* db.sqlite3 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D478A21616C006BF001AAA77 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D478A1E716C006BE001AAA77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D478A1EF16C006BE001AAA77;
+			remoteInfo = MOEDict;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D478A1F016C006BE001AAA77 /* MOEDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOEDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D478A1F416C006BE001AAA77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D478A1F616C006BE001AAA77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D478A1F816C006BE001AAA77 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D478A1FC16C006BF001AAA77 /* MOEDict-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOEDict-Info.plist"; sourceTree = "<group>"; };
+		D478A1FE16C006BF001AAA77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D478A20016C006BF001AAA77 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D478A20216C006BF001AAA77 /* MOEDict-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MOEDict-Prefix.pch"; sourceTree = "<group>"; };
+		D478A20316C006BF001AAA77 /* MDAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MDAppDelegate.h; sourceTree = "<group>"; };
+		D478A20416C006BF001AAA77 /* MDAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MDAppDelegate.m; sourceTree = "<group>"; };
+		D478A20616C006BF001AAA77 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D478A20816C006BF001AAA77 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D478A20A16C006BF001AAA77 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D478A21116C006BF001AAA77 /* MOEDictTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MOEDictTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D478A21216C006BF001AAA77 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		D478A21A16C006BF001AAA77 /* MOEDictTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MOEDictTests-Info.plist"; sourceTree = "<group>"; };
+		D478A21C16C006BF001AAA77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D478A21E16C006BF001AAA77 /* MOEDictTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MOEDictTests.h; sourceTree = "<group>"; };
+		D478A21F16C006BF001AAA77 /* MOEDictTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MOEDictTests.m; sourceTree = "<group>"; };
+		D478A22A16C007EB001AAA77 /* ObjSqliteDB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjSqliteDB.m; path = ExternalLibraries/ObjSqlite/src/ObjSqliteDB.m; sourceTree = SOURCE_ROOT; };
+		D478A22B16C007EB001AAA77 /* ObjSqliteStatement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjSqliteStatement.m; path = ExternalLibraries/ObjSqlite/src/ObjSqliteStatement.m; sourceTree = SOURCE_ROOT; };
+		D478A22E16C007F4001AAA77 /* ObjSqliteDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjSqliteDB.h; path = ExternalLibraries/ObjSqlite/src/ObjSqlite/ObjSqliteDB.h; sourceTree = SOURCE_ROOT; };
+		D478A22F16C007F4001AAA77 /* ObjSqliteStatement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ObjSqliteStatement.h; path = ExternalLibraries/ObjSqlite/src/ObjSqlite/ObjSqliteStatement.h; sourceTree = SOURCE_ROOT; };
+		D478A23016C00828001AAA77 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		D478A23216C00852001AAA77 /* MDDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDatabase.h; sourceTree = "<group>"; };
+		D478A23316C00852001AAA77 /* MDDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDatabase.m; sourceTree = "<group>"; };
+		D478A23516C00973001AAA77 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D478A1ED16C006BE001AAA77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A23116C00828001AAA77 /* libsqlite3.dylib in Frameworks */,
+				D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */,
+				D478A1F716C006BE001AAA77 /* Foundation.framework in Frameworks */,
+				D478A1F916C006BE001AAA77 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D478A20D16C006BF001AAA77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A23A16C00B5A001AAA77 /* libsqlite3.dylib in Frameworks */,
+				D478A21316C006BF001AAA77 /* SenTestingKit.framework in Frameworks */,
+				D478A21416C006BF001AAA77 /* UIKit.framework in Frameworks */,
+				D478A21516C006BF001AAA77 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D478A1E516C006BE001AAA77 = {
+			isa = PBXGroup;
+			children = (
+				D478A1FA16C006BE001AAA77 /* MOEDict */,
+				D478A21816C006BF001AAA77 /* MOEDictTests */,
+				D478A1F316C006BE001AAA77 /* Frameworks */,
+				D478A1F116C006BE001AAA77 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D478A1F116C006BE001AAA77 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D478A1F016C006BE001AAA77 /* MOEDict.app */,
+				D478A21116C006BF001AAA77 /* MOEDictTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D478A1F316C006BE001AAA77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D478A23016C00828001AAA77 /* libsqlite3.dylib */,
+				D478A1F416C006BE001AAA77 /* UIKit.framework */,
+				D478A1F616C006BE001AAA77 /* Foundation.framework */,
+				D478A1F816C006BE001AAA77 /* CoreGraphics.framework */,
+				D478A21216C006BF001AAA77 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D478A1FA16C006BE001AAA77 /* MOEDict */ = {
+			isa = PBXGroup;
+			children = (
+				D478A22916C007DC001AAA77 /* External Libraries */,
+				D478A20316C006BF001AAA77 /* MDAppDelegate.h */,
+				D478A20416C006BF001AAA77 /* MDAppDelegate.m */,
+				D478A23216C00852001AAA77 /* MDDatabase.h */,
+				D478A23316C00852001AAA77 /* MDDatabase.m */,
+				D478A1FB16C006BF001AAA77 /* Supporting Files */,
+			);
+			path = MOEDict;
+			sourceTree = "<group>";
+		};
+		D478A1FB16C006BF001AAA77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D478A23516C00973001AAA77 /* db.sqlite3 */,
+				D478A1FC16C006BF001AAA77 /* MOEDict-Info.plist */,
+				D478A1FD16C006BF001AAA77 /* InfoPlist.strings */,
+				D478A20016C006BF001AAA77 /* main.m */,
+				D478A20216C006BF001AAA77 /* MOEDict-Prefix.pch */,
+				D478A20616C006BF001AAA77 /* Default.png */,
+				D478A20816C006BF001AAA77 /* Default@2x.png */,
+				D478A20A16C006BF001AAA77 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D478A21816C006BF001AAA77 /* MOEDictTests */ = {
+			isa = PBXGroup;
+			children = (
+				D478A21E16C006BF001AAA77 /* MOEDictTests.h */,
+				D478A21F16C006BF001AAA77 /* MOEDictTests.m */,
+				D478A21916C006BF001AAA77 /* Supporting Files */,
+			);
+			path = MOEDictTests;
+			sourceTree = "<group>";
+		};
+		D478A21916C006BF001AAA77 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D478A21A16C006BF001AAA77 /* MOEDictTests-Info.plist */,
+				D478A21B16C006BF001AAA77 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D478A22916C007DC001AAA77 /* External Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				D478A22E16C007F4001AAA77 /* ObjSqliteDB.h */,
+				D478A22F16C007F4001AAA77 /* ObjSqliteStatement.h */,
+				D478A22A16C007EB001AAA77 /* ObjSqliteDB.m */,
+				D478A22B16C007EB001AAA77 /* ObjSqliteStatement.m */,
+			);
+			name = "External Libraries";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D478A1EF16C006BE001AAA77 /* MOEDict */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D478A22316C006BF001AAA77 /* Build configuration list for PBXNativeTarget "MOEDict" */;
+			buildPhases = (
+				D478A1EC16C006BE001AAA77 /* Sources */,
+				D478A1ED16C006BE001AAA77 /* Frameworks */,
+				D478A1EE16C006BE001AAA77 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MOEDict;
+			productName = MOEDict;
+			productReference = D478A1F016C006BE001AAA77 /* MOEDict.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D478A21016C006BF001AAA77 /* MOEDictTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D478A22616C006BF001AAA77 /* Build configuration list for PBXNativeTarget "MOEDictTests" */;
+			buildPhases = (
+				D478A20C16C006BF001AAA77 /* Sources */,
+				D478A20D16C006BF001AAA77 /* Frameworks */,
+				D478A20E16C006BF001AAA77 /* Resources */,
+				D478A20F16C006BF001AAA77 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D478A21716C006BF001AAA77 /* PBXTargetDependency */,
+			);
+			name = MOEDictTests;
+			productName = MOEDictTests;
+			productReference = D478A21116C006BF001AAA77 /* MOEDictTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D478A1E716C006BE001AAA77 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = MD;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = zonble;
+			};
+			buildConfigurationList = D478A1EA16C006BE001AAA77 /* Build configuration list for PBXProject "MOEDict" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D478A1E516C006BE001AAA77;
+			productRefGroup = D478A1F116C006BE001AAA77 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D478A1EF16C006BE001AAA77 /* MOEDict */,
+				D478A21016C006BF001AAA77 /* MOEDictTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D478A1EE16C006BE001AAA77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A1FF16C006BF001AAA77 /* InfoPlist.strings in Resources */,
+				D478A20716C006BF001AAA77 /* Default.png in Resources */,
+				D478A20916C006BF001AAA77 /* Default@2x.png in Resources */,
+				D478A20B16C006BF001AAA77 /* Default-568h@2x.png in Resources */,
+				D478A23616C00973001AAA77 /* db.sqlite3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D478A20E16C006BF001AAA77 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A21D16C006BF001AAA77 /* InfoPlist.strings in Resources */,
+				D478A23B16C00B82001AAA77 /* db.sqlite3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D478A20F16C006BF001AAA77 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D478A1EC16C006BE001AAA77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A20116C006BF001AAA77 /* main.m in Sources */,
+				D478A20516C006BF001AAA77 /* MDAppDelegate.m in Sources */,
+				D478A22C16C007EB001AAA77 /* ObjSqliteDB.m in Sources */,
+				D478A22D16C007EB001AAA77 /* ObjSqliteStatement.m in Sources */,
+				D478A23416C00852001AAA77 /* MDDatabase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D478A20C16C006BF001AAA77 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D478A22016C006BF001AAA77 /* MOEDictTests.m in Sources */,
+				D478A23716C0098E001AAA77 /* ObjSqliteDB.m in Sources */,
+				D478A23816C0098E001AAA77 /* ObjSqliteStatement.m in Sources */,
+				D478A23916C00996001AAA77 /* MDDatabase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D478A21716C006BF001AAA77 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D478A1EF16C006BE001AAA77 /* MOEDict */;
+			targetProxy = D478A21616C006BF001AAA77 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D478A1FD16C006BF001AAA77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D478A1FE16C006BF001AAA77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D478A21B16C006BF001AAA77 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D478A21C16C006BF001AAA77 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D478A22116C006BF001AAA77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D478A22216C006BF001AAA77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D478A22416C006BF001AAA77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
+				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D478A22516C006BF001AAA77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
+				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D478A22716C006BF001AAA77 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOEDict.app/MOEDict";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
+				INFOPLIST_FILE = "MOEDictTests/MOEDictTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		D478A22816C006BF001AAA77 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MOEDict.app/MOEDict";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
+				INFOPLIST_FILE = "MOEDictTests/MOEDictTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D478A1EA16C006BE001AAA77 /* Build configuration list for PBXProject "MOEDict" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D478A22116C006BF001AAA77 /* Debug */,
+				D478A22216C006BF001AAA77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D478A22316C006BF001AAA77 /* Build configuration list for PBXNativeTarget "MOEDict" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D478A22416C006BF001AAA77 /* Debug */,
+				D478A22516C006BF001AAA77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D478A22616C006BF001AAA77 /* Build configuration list for PBXNativeTarget "MOEDictTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D478A22716C006BF001AAA77 /* Debug */,
+				D478A22816C006BF001AAA77 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D478A1E716C006BE001AAA77 /* Project object */;
+}
