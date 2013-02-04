@@ -31,6 +31,7 @@
 		D478A23916C00996001AAA77 /* MDDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A23316C00852001AAA77 /* MDDatabase.m */; };
 		D478A23A16C00B5A001AAA77 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A23016C00828001AAA77 /* libsqlite3.dylib */; };
 		D478A23B16C00B82001AAA77 /* db.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D478A23516C00973001AAA77 /* db.sqlite3 */; };
+		D478A24F16C02806001AAA77 /* MDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D478A24E16C02806001AAA77 /* MDViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		D478A23216C00852001AAA77 /* MDDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDDatabase.h; sourceTree = "<group>"; };
 		D478A23316C00852001AAA77 /* MDDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDDatabase.m; sourceTree = "<group>"; };
 		D478A23516C00973001AAA77 /* db.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = db.sqlite3; sourceTree = "<group>"; };
+		D478A24D16C02805001AAA77 /* MDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDViewController.h; sourceTree = "<group>"; };
+		D478A24E16C02806001AAA77 /* MDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +139,8 @@
 				D478A22916C007DC001AAA77 /* External Libraries */,
 				D478A20316C006BF001AAA77 /* MDAppDelegate.h */,
 				D478A20416C006BF001AAA77 /* MDAppDelegate.m */,
+				D478A24D16C02805001AAA77 /* MDViewController.h */,
+				D478A24E16C02806001AAA77 /* MDViewController.m */,
 				D478A23216C00852001AAA77 /* MDDatabase.h */,
 				D478A23316C00852001AAA77 /* MDDatabase.m */,
 				D478A1FB16C006BF001AAA77 /* Supporting Files */,
@@ -305,6 +310,7 @@
 				D478A22C16C007EB001AAA77 /* ObjSqliteDB.m in Sources */,
 				D478A22D16C007EB001AAA77 /* ObjSqliteStatement.m in Sources */,
 				D478A23416C00852001AAA77 /* MDDatabase.m in Sources */,
+				D478A24F16C02806001AAA77 /* MDViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,8 @@
-//http://kcwu.csie.org/~kcwu/tmp/moedict/development.sqlite3.bz2
+#import "MDViewController.h"
 
 @interface MDAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) MDViewController *rootViewController;
 
 @end
