@@ -81,9 +81,9 @@
 	NSInteger entryID = [[d objectForKey:@"id"] integerValue];
 	self.searchBar.text = [d objectForKey:@"title"];
 	[self.db fetchDefinitionsWithID:entryID callback:^(NSDictionary *response) {
-		[self.searchDisplayController setActive:NO animated:YES];
 		NSString *HTML = [_HTMLRenderer renderHTML:response];
 		[self.webView loadHTMLString:HTML baseURL:nil];
+		[self.searchDisplayController setActive:NO animated:YES];
 	}];
 }
 
