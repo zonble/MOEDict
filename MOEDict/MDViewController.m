@@ -8,6 +8,7 @@
 - (void)dealloc
 {
 	[_db release];
+	[_HTMLRenderer release];
 	[_prefixArray release];
 	[_webView release];
 	[_searchBar release];
@@ -21,6 +22,7 @@
     if (self) {
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite3"];
 		_db = [[MDDatabase alloc] initWithPath:path];
+		_HTMLRenderer = [[MDHTMLRenderer alloc] init];
     }
     return self;
 }
@@ -31,12 +33,14 @@
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	self.searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 44.0)] autorelease];
 	self.searchBar.delegate = self;
+	self.searchBar.placeholder = NSLocalizedString(@"Your keyword", @"");
 	self.searchDisplayController = [[[UISearchDisplayController alloc] initWithSearchBar:self.searchBar contentsController:self] autorelease];
 	self.searchDisplayController.searchResultsDelegate = self;
 	self.searchDisplayController.searchResultsDataSource = self;
 	[self.view addSubview:self.searchBar];
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 44.0, self.view.bounds.size.width, self.view.bounds.size.height - 44.0)] autorelease];
-//	self.webView.delegate = (id)self;
+	self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	//	self.webView.delegate = (id)self;
 	[self.view addSubview:self.webView];
 }
 
@@ -75,9 +79,10 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	NSDictionary *d = [self.prefixArray objectAtIndex:indexPath.row];
 	NSInteger entryID = [[d objectForKey:@"id"] integerValue];
+	self.searchBar.text = [d objectForKey:@"title"];
 	[self.db fetchDefinitionsWithID:entryID callback:^(NSDictionary *response) {
 		[self.searchDisplayController setActive:NO animated:YES];
-		NSString *HTML = [response description];
+		NSString *HTML = [_HTMLRenderer renderHTML:response];
 		[self.webView loadHTMLString:HTML baseURL:nil];
 	}];
 }

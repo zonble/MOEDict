@@ -99,7 +99,7 @@
 			NSMutableDictionary *d = [NSMutableDictionary dictionary];
 			[d setObject:@(heteronymID) forKey:@"id"];
 			if (bopomofo) { [d setObject:bopomofo forKey:@"bopomofo"]; }
-			if (bopomofo2) { [d setObject:bopomofo forKey:@"bopomofo2"]; }
+			if (bopomofo2) { [d setObject:bopomofo2 forKey:@"bopomofo2"]; }
 			if (pinyin) { [d setObject:bopomofo forKey:@"pinyin"]; }
 			[list addObject:d];
 		}
