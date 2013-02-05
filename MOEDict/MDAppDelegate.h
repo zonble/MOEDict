@@ -1,4 +1,5 @@
 #import "MDViewController.h"
+#import "MDIPadViewController.h"
 
 @interface MDAppDelegate : UIResponder <UIApplicationDelegate>
 

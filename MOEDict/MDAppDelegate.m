@@ -12,7 +12,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-	self.rootViewController = [[[MDViewController alloc] init] autorelease];
+	self.rootViewController = [[[IsIPad() ? [MDIPadViewController class] : [MDViewController class] alloc] init] autorelease];
 	self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
     return YES;

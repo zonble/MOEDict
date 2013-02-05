@@ -150,4 +150,34 @@
 	[operationQueue addOperation:op];
 }
 
+- (NSInteger)_entryIDWithKeyword:(NSString *)inKeyword
+{	
+	const char *SQL = "SELECT id,title FROM entries WHERE title = ?";
+	ObjSqliteStatement *statement = [[ObjSqliteStatement alloc] initWithSQL:SQL db:db];
+	[statement bindText:inKeyword toColumn:1];
+	[statement step];
+	NSInteger index = [statement intFromColumn:0];
+	NSString *title = [statement textFromColumn:1];
+	if (index) {
+		NSAssert([title isEqualToString:inKeyword], @"Keyword must match.");
+	}
+	return index;
+}
+
+- (void)fetchDefinitionsWithKeyword:(NSString *)inKeyword callback:(void(^)(NSDictionary *))inCallback
+{
+	if (!inKeyword || ![inKeyword length]) {
+		return;
+	}
+
+	NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
+		NSInteger entryID = [self _entryIDWithKeyword:inKeyword];
+		if (entryID) {
+			[self _fetchDefinitionsWithID:entryID callback:inCallback];
+		}
+	}];
+	[operationQueue cancelAllOperations];
+	[operationQueue addOperation:op];
+}
+
 @end
