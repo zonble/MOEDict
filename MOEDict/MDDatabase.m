@@ -117,7 +117,7 @@ NSString *const kMDBSourceKey = @"source";
 			[d setObject:@(heteronymID) forKey:kMDIdentifierKey];
 			if (bopomofo) { [d setObject:bopomofo forKey:kMDBopomofo1Key]; }
 			if (bopomofo2) { [d setObject:bopomofo2 forKey:kMDBopomofo2Key]; }
-			if (pinyin) { [d setObject:bopomofo forKey:kMDBPinyinKey]; }
+			if (pinyin) { [d setObject:pinyin forKey:kMDBPinyinKey]; }
 			[list addObject:d];
 		}
 	}
