@@ -38,6 +38,8 @@
 		D478EA4416C145C9008E8EFE /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = D478EA4016C145C9008E8EFE /* Default-Portrait.png */; };
 		D478EA4516C145C9008E8EFE /* Default-Portrait@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D478EA4116C145C9008E8EFE /* Default-Portrait@2x.png */; };
 		D478EA5116C146DE008E8EFE /* MDIPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D478EA5016C146DE008E8EFE /* MDIPadViewController.m */; };
+		D478EA5316C14FA3008E8EFE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5216C14FA3008E8EFE /* style.css */; };
+		D478EA5516C154F2008E8EFE /* style_ipad.css in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5416C154F2008E8EFE /* style_ipad.css */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,8 @@
 		D478EA4116C145C9008E8EFE /* Default-Portrait@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x.png"; sourceTree = "<group>"; };
 		D478EA4F16C146DE008E8EFE /* MDIPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDIPadViewController.h; sourceTree = "<group>"; };
 		D478EA5016C146DE008E8EFE /* MDIPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDIPadViewController.m; sourceTree = "<group>"; };
+		D478EA5216C14FA3008E8EFE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		D478EA5416C154F2008E8EFE /* style_ipad.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style_ipad.css; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				D478A23516C00973001AAA77 /* db.sqlite3 */,
+				D478EA5216C14FA3008E8EFE /* style.css */,
+				D478EA5416C154F2008E8EFE /* style_ipad.css */,
 				D478A1FC16C006BF001AAA77 /* MOEDict-Info.plist */,
 				D478A1FD16C006BF001AAA77 /* InfoPlist.strings */,
 				D478A20016C006BF001AAA77 /* main.m */,
@@ -296,6 +302,8 @@
 				D478EA4316C145C9008E8EFE /* Default-Landscape@2x.png in Resources */,
 				D478EA4416C145C9008E8EFE /* Default-Portrait.png in Resources */,
 				D478EA4516C145C9008E8EFE /* Default-Portrait@2x.png in Resources */,
+				D478EA5316C14FA3008E8EFE /* style.css in Resources */,
+				D478EA5516C154F2008E8EFE /* style_ipad.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

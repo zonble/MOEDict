@@ -62,8 +62,7 @@
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 	NSDictionary *d = [self.prefixArray objectAtIndex:indexPath.row];
-	NSInteger entryID = [[d objectForKey:@"id"] integerValue];
-	self.searchBar.text = [d objectForKey:@"title"];
+	NSInteger entryID = [[d objectForKey:kMDIdentifierKey] integerValue];
 	[self.db fetchDefinitionsWithID:entryID callback:^(NSDictionary *response) {
 		NSString *HTML = [self.HTMLRenderer renderHTML:response];
 		[self.webView loadHTMLString:HTML baseURL:nil];

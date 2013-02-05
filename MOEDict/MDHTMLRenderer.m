@@ -1,4 +1,5 @@
 #import "MDHTMLRenderer.h"
+#import "MDDatabase.h"
 
 @implementation MDHTMLRenderer
 
@@ -6,52 +7,52 @@
 {
 	NSMutableString *s = [NSMutableString string];
 	[s appendString:@"<html><head></head><body>"];
-	if (inDictionary[@"title"]) {
-		[s appendFormat:@"<h1>%@</h1>", inDictionary[@"title"]];
+	if (inDictionary[kMDTitleKey]) {
+		[s appendFormat:@"<h1>%@</h1>", inDictionary[kMDTitleKey]];
 	}
 	[s appendString:@"<div>"];
 	[s appendString:@"<ul>"];
-	if (inDictionary[@"radical"]) {
-		[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Radical:", @""), inDictionary[@"radical"]];
+	if (inDictionary[kMDRadicalKey]) {
+		[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Radical:", @""), inDictionary[kMDRadicalKey]];
 	}
-	if (inDictionary[@"stroke_count"]) {
-		[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Stroke Count:", @""), inDictionary[@"stroke_count"]];
+	if (inDictionary[kMDStrokeCountKey]) {
+		[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Stroke Count:", @""), inDictionary[kMDStrokeCountKey]];
 	}
-	if (inDictionary[@"non_radical_stroke_count"]) {
-		[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Stroke Count besides Radical:", @""), inDictionary[@"non_radical_stroke_count"]];
+	if (inDictionary[kMDNonRadicalStrokeCountKey]) {
+		[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Stroke Count besides Radical:", @""), inDictionary[kMDNonRadicalStrokeCountKey]];
 	}
 	[s appendString:@"</ul>"];
 	[s appendString:@"</div>"];
 
-	for (NSDictionary *heteronym in inDictionary[@"heteronyms"]) {
+	for (NSDictionary *heteronym in inDictionary[kMDBHeteronymsKey]) {
 		[s appendString:@"<div>"];
 		[s appendString:@"<ul>"];
-		if (heteronym[@"bopomofo"]) {
-			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Phonetic 1:", @""), heteronym[@"bopomofo"]];
+		if (heteronym[kMDBopomofo1Key]) {
+			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Phonetic 1:", @""), heteronym[kMDBopomofo1Key]];
 		}
-		if (heteronym[@"bopomofo2"]) {
-			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Phonetic 2:", @""), heteronym[@"bopomofo2"]];
+		if (heteronym[kMDBopomofo2Key]) {
+			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Phonetic 2:", @""), heteronym[kMDBopomofo2Key]];
 		}
-		if (heteronym[@"pinyin"]) {
-			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Hanyu Pinyin:", @""), heteronym[@"pinyin"]];
+		if (heteronym[kMDBPinyinKey]) {
+			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Hanyu Pinyin:", @""), heteronym[kMDBPinyinKey]];
 		}
 		[s appendString:@"</ul>"];
-		for (NSDictionary *definition in heteronym[@"definitions"]) {
-			if (definition[@"type"]) {
-				[s appendFormat:@"<p><b>[%@]</b> %@</p>", definition[@"type"], definition[@"definition"]];
+		for (NSDictionary *definition in heteronym[kMDBDefinitionsKey]) {
+			if (definition[kMDBTypeKey]) {
+				[s appendFormat:@"<p><b>[%@]</b> %@</p>", definition[kMDBTypeKey], definition[kMDBDefinitionKey]];
 			}
 			else {
-				[s appendFormat:@"<p>%@</p>", definition[@"definition"]];
+				[s appendFormat:@"<p>%@</p>", definition[kMDBDefinitionKey]];
 			}
 
-			if (definition[@"example"]) {
-				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Sample:", @""), definition[@"example"]];
+			if (definition[kMDBExcampleKey]) {
+				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Sample:", @""), definition[kMDBExcampleKey]];
 			}
-			if (definition[@"synonyms"]) {
+			if (definition[kMDBSynonymsKey]) {
 			}
-			if (definition[@"antonyms"]) {
+			if (definition[kMDBAntonymsKey]) {
 			}
-			if (definition[@"source"]) {
+			if (definition[kMDBSourceKey]) {
 			}
 		}
 		[s appendString:@"</div>"];

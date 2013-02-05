@@ -2,6 +2,23 @@
 #import "ObjSqliteDB.h"
 #import "ObjSqliteStatement.h"
 
+NSString *const kMDIdentifierKey = @"id";
+NSString *const kMDTitleKey = @"title";
+NSString *const kMDRadicalKey = @"radical";
+NSString *const kMDStrokeCountKey = @"stroke_count";
+NSString *const kMDNonRadicalStrokeCountKey = @"non_radical_stroke_count";
+NSString *const kMDBHeteronymsKey = @"heteronyms";
+NSString *const kMDBopomofo1Key = @"bopomofo";
+NSString *const kMDBopomofo2Key = @"bopomofo2";
+NSString *const kMDBPinyinKey = @"pinyin";
+NSString *const kMDBDefinitionsKey = @"definitions";
+NSString *const kMDBTypeKey = @"type";
+NSString *const kMDBDefinitionKey = @"definition";
+NSString *const kMDBExcampleKey = @"example";
+NSString *const kMDBSynonymsKey = @"synonyms";
+NSString *const kMDBAntonymsKey = @"antonyms";
+NSString *const kMDBSourceKey = @"source";
+
 @implementation MDDatabase
 {
 	ObjSqliteDB *db;
@@ -43,7 +60,7 @@
 		NSInteger entryID = [statement intFromColumn:0];
 		NSString *title = [statement textFromColumn:1];
 		if (entryID) {
-			[list addObject:@{@"id":@(entryID), @"title":title}];
+			[list addObject:@{kMDIdentifierKey:@(entryID), kMDTitleKey:title}];
 		}
 	}
 	[statement release];
@@ -77,13 +94,13 @@
 	NSString *radical = [statement textFromColumn:1];
 	NSString *strokeCount = [statement textFromColumn:2];
 	NSString *nonRadicalStrokeCount = [statement textFromColumn:3];
-	if (title) { [response setObject:title forKey:@"title"]; }
-	if (radical) { [response setObject:radical forKey:@"radical"]; }
+	if (title) { [response setObject:title forKey:kMDTitleKey]; }
+	if (radical) { [response setObject:radical forKey:kMDRadicalKey]; }
 	if (strokeCount) {
-		[response setObject:[NSDecimalNumber decimalNumberWithString:strokeCount] forKey:@"stroke_count"];
+		[response setObject:[NSDecimalNumber decimalNumberWithString:strokeCount] forKey:kMDStrokeCountKey];
 	}
 	if (nonRadicalStrokeCount) {
-		[response setObject:[NSDecimalNumber decimalNumberWithString:nonRadicalStrokeCount] forKey:@"non_radical_stroke_count"];
+		[response setObject:[NSDecimalNumber decimalNumberWithString:nonRadicalStrokeCount] forKey:kMDNonRadicalStrokeCountKey];
 	}
 
 	const char *heteronymSQL = "SELECT id, bopomofo, bopomofo2, pinyin FROM heteronyms WHERE entry_id = ?";
@@ -97,17 +114,17 @@
 		NSString *pinyin = [heteronymStatement textFromColumn:3];
 		if (heteronymID) {
 			NSMutableDictionary *d = [NSMutableDictionary dictionary];
-			[d setObject:@(heteronymID) forKey:@"id"];
-			if (bopomofo) { [d setObject:bopomofo forKey:@"bopomofo"]; }
-			if (bopomofo2) { [d setObject:bopomofo2 forKey:@"bopomofo2"]; }
-			if (pinyin) { [d setObject:bopomofo forKey:@"pinyin"]; }
+			[d setObject:@(heteronymID) forKey:kMDIdentifierKey];
+			if (bopomofo) { [d setObject:bopomofo forKey:kMDBopomofo1Key]; }
+			if (bopomofo2) { [d setObject:bopomofo2 forKey:kMDBopomofo2Key]; }
+			if (pinyin) { [d setObject:bopomofo forKey:kMDBPinyinKey]; }
 			[list addObject:d];
 		}
 	}
 	[heteronymStatement release];
 
 	for (NSMutableDictionary *heteronym in list) {
-		NSInteger heteronymID = [[heteronym objectForKey:@"id"] integerValue];
+		NSInteger heteronymID = [[heteronym objectForKey:kMDIdentifierKey] integerValue];
 		NSLog(@"heteronymID:%d", heteronymID);
 		const char *definitionSQL = "SELECT id, type, def, example, synonyms, antonyms, source FROM definitions WHERE heteronym_id = ?";
 		ObjSqliteStatement *definitionStatement = [[ObjSqliteStatement alloc] initWithSQL:definitionSQL db:db];
@@ -124,18 +141,18 @@
 			if (definitionID) {
 				NSMutableDictionary *d = [NSMutableDictionary dictionary];
 				if (typeString) { [d setObject:typeString forKey:@"type"]; }
-				if (definition) { [d setObject:definition forKey:@"definition"]; }
-				if (example) { [d setObject:example forKey:@"example"]; }
-				if (synonyms) { [d setObject:synonyms forKey:@"synonyms"]; }
-				if (antonyms) { [d setObject:antonyms forKey:@"antonyms"]; }
-				if (source) { [d setObject:source forKey:@"source"]; }
+				if (definition) { [d setObject:definition forKey:kMDBDefinitionKey]; }
+				if (example) { [d setObject:example forKey:kMDBExcampleKey]; }
+				if (synonyms) { [d setObject:synonyms forKey:kMDBSynonymsKey]; }
+				if (antonyms) { [d setObject:antonyms forKey:kMDBAntonymsKey]; }
+				if (source) { [d setObject:source forKey:kMDBSourceKey]; }
 				[definitions addObject:d];
 			}
 		}
 		[definitionStatement release];
-		[heteronym setObject:definitions forKey:@"definitions"];
+		[heteronym setObject:definitions forKey:kMDBDefinitionsKey];
 	}
-	[response setObject:list forKey:@"heteronyms"];
+	[response setObject:list forKey:kMDBHeteronymsKey];
 	dispatch_async(dispatch_get_main_queue(), ^{
 		inCallback(response);
 	});

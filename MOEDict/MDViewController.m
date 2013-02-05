@@ -78,17 +78,17 @@
 	if (cell == nil) {
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
-	NSDictionary *d = [self.prefixArray objectAtIndex:indexPath.row];
-	cell.textLabel.text = [d objectForKey:@"title"];
+	NSDictionary *d = self.prefixArray[indexPath.row];
+	cell.textLabel.text = d[kMDTitleKey];
 	return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	NSDictionary *d = [self.prefixArray objectAtIndex:indexPath.row];
-	NSInteger entryID = [[d objectForKey:@"id"] integerValue];
-	self.searchBar.text = [d objectForKey:@"title"];
+	NSDictionary *d = self.prefixArray[indexPath.row];
+	NSInteger entryID = [d[kMDIdentifierKey] integerValue];
+	self.searchBar.text = d[kMDTitleKey];
 	[self.db fetchDefinitionsWithID:entryID callback:^(NSDictionary *response) {
 		NSString *HTML = [self.HTMLRenderer renderHTML:response];
 		[self.webView loadHTMLString:HTML baseURL:nil];

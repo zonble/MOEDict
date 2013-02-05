@@ -20,10 +20,10 @@
 	[db fetchCompletionListWithString:@"萌" callback:^(NSArray *list) {
 		NSLog(@"list:%@", list);
 		for (NSDictionary *d in list) {
-			STAssertNotNil(d[@"id"], @"ID must not be nil");
-			STAssertTrue([d[@"id"] integerValue] > 0, @"ID must not be nil");
-			STAssertNotNil(d[@"title"], @"Title must not be nil");
-			STAssertTrue([d[@"title"] length], @"There must be a title");
+			STAssertNotNil(d[kMDIdentifierKey], @"ID must not be nil");
+			STAssertTrue([d[kMDIdentifierKey] integerValue] > 0, @"ID must not be nil");
+			STAssertNotNil(d[kMDTitleKey], @"Title must not be nil");
+			STAssertTrue([d[kMDTitleKey] length], @"There must be a title");
 		}
 		done = YES;
 	}];
