@@ -17,9 +17,13 @@ extern NSString *const kMDBSynonymsKey;
 extern NSString *const kMDBAntonymsKey;
 extern NSString *const kMDBSourceKey;
 
+// An interface which helps search with the database of MOE
+// Dictionary.
+
 @interface MDDatabase : NSObject
 
-- (id)initWithPath:(NSString *)inPath;
+- (id)initWithPath:(NSString *)inPath; // Path of the database file.
+
 - (void)fetchCompletionListWithString:(NSString *)inStr callback:(void(^)(NSArray *))inCallback;
 - (void)fetchDefinitionsWithID:(NSInteger)inID callback:(void(^)(NSDictionary *))inCallback;
 - (void)fetchDefinitionsWithKeyword:(NSString *)inKeyword callback:(void(^)(NSDictionary *))inCallback;
