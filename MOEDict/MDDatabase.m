@@ -10,23 +10,23 @@
 
 - (void)dealloc
 {
-    [db release];
+	[db release];
 	[operationQueue release];
-    [super dealloc];
+	[super dealloc];
 }
 
 - (id)initWithPath:(NSString *)inPath
 {
-    self = [super init];
-    if (self) {
+	self = [super init];
+	if (self) {
 		db = [[ObjSqliteDB alloc] initWithPath:inPath];
 		NSAssert(db != nil, @"Database must be created.");
 		sqlite3* ObjSqliteDB = db.sqliteDB;
 		NSAssert(ObjSqliteDB != nil, @"Database must be created.");
 		operationQueue = [[NSOperationQueue alloc] init];
 		[operationQueue setMaxConcurrentOperationCount:1];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)_fetchCompletionListWithString:(NSString *)inStr callback:(void(^)(NSArray *))inCallback

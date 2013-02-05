@@ -1,6 +1,8 @@
 #import "MDDatabase.h"
 #import "MDHTMLRenderer.h"
 
+// The main view controller.
+
 @interface MDViewController : UIViewController
 	<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 

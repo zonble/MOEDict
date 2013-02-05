@@ -13,18 +13,18 @@
 	[_webView release];
 	[_searchBar release];
 	[searchDisplayController release];
-    [super dealloc];
+	[super dealloc];
 }
 
 - (id)init
 {
-    self = [super init];
-    if (self) {
+	self = [super init];
+	if (self) {
 		NSString *path = [[NSBundle mainBundle] pathForResource:@"db" ofType:@"sqlite3"];
 		_db = [[MDDatabase alloc] initWithPath:path];
 		_HTMLRenderer = [[MDHTMLRenderer alloc] init];
-    }
-    return self;
+	}
+	return self;
 }
 
 - (void)loadView
@@ -40,21 +40,21 @@
 	[self.view addSubview:self.searchBar];
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 44.0, self.view.bounds.size.width, self.view.bounds.size.height - 44.0)] autorelease];
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	//	self.webView.delegate = (id)self;
 	[self.view addSubview:self.webView];
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+	[super viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 }
 
 #pragma mark -
+#pragma mark UITableView data source and delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -88,6 +88,7 @@
 }
 
 #pragma mark -
+#pragma mark UISearchBar delegate
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
