@@ -41,6 +41,7 @@
 		D478EA5316C14FA3008E8EFE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5216C14FA3008E8EFE /* style.css */; };
 		D478EA5516C154F2008E8EFE /* style_ipad.css in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5416C154F2008E8EFE /* style_ipad.css */; };
 		D478EA5716C15B51008E8EFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478EA5616C15B51008E8EFE /* QuartzCore.framework */; };
+		D478EA5A16C1747F008E8EFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5816C1747F008E8EFE /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,10 @@
 		D478EA5216C14FA3008E8EFE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		D478EA5416C154F2008E8EFE /* style_ipad.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style_ipad.css; sourceTree = "<group>"; };
 		D478EA5616C15B51008E8EFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D478EA5916C1747F008E8EFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D478EA5B16C17496008E8EFE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		D478EA5C16C17496008E8EFE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		D478EA5D16C17496008E8EFE /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 				D478EA5416C154F2008E8EFE /* style_ipad.css */,
 				D478A1FC16C006BF001AAA77 /* MOEDict-Info.plist */,
 				D478A1FD16C006BF001AAA77 /* InfoPlist.strings */,
+				D478EA5816C1747F008E8EFE /* Localizable.strings */,
 				D478A20016C006BF001AAA77 /* main.m */,
 				D478A20216C006BF001AAA77 /* MOEDict-Prefix.pch */,
 				D478EA3E16C145C9008E8EFE /* Default-Landscape.png */,
@@ -280,6 +286,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hant",
 			);
 			mainGroup = D478A1E516C006BE001AAA77;
 			productRefGroup = D478A1F116C006BE001AAA77 /* Products */;
@@ -308,6 +315,7 @@
 				D478EA4516C145C9008E8EFE /* Default-Portrait@2x.png in Resources */,
 				D478EA5316C14FA3008E8EFE /* style.css in Resources */,
 				D478EA5516C154F2008E8EFE /* style_ipad.css in Resources */,
+				D478EA5A16C1747F008E8EFE /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +388,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D478A1FE16C006BF001AAA77 /* en */,
+				D478EA5B16C17496008E8EFE /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -388,8 +397,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				D478A21C16C006BF001AAA77 /* en */,
+				D478EA5D16C17496008E8EFE /* zh-Hant */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D478EA5816C1747F008E8EFE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D478EA5916C1747F008E8EFE /* en */,
+				D478EA5C16C17496008E8EFE /* zh-Hant */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

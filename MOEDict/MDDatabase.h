@@ -8,14 +8,16 @@ extern NSString *const kMDNonRadicalStrokeCountKey;
 extern NSString *const kMDBHeteronymsKey;
 extern NSString *const kMDBopomofo1Key;
 extern NSString *const kMDBopomofo2Key;
-extern NSString *const kMDBPinyinKey;
-extern NSString *const kMDBDefinitionsKey;
+extern NSString *const kMDPinyinKey;
+extern NSString *const kMDDefinitionsKey;
 extern NSString *const kMDBTypeKey;
-extern NSString *const kMDBDefinitionKey;
-extern NSString *const kMDBExcampleKey;
-extern NSString *const kMDBSynonymsKey;
-extern NSString *const kMDBAntonymsKey;
-extern NSString *const kMDBSourceKey;
+extern NSString *const kMDDefinitionKey;
+extern NSString *const kMDExcampleKey;
+extern NSString *const kMDSynonymsKey;
+extern NSString *const kMDAntonymsKey;
+extern NSString *const kMDSourceKey;
+extern NSString *const kMDQuoteKey;
+extern NSString *const kMDLinkKey;
 
 // An interface which helps search with the database of MOE
 // Dictionary.

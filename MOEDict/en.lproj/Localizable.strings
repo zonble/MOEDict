@@ -1,0 +1,22 @@
+/*
+Scan List
+../..
+*/
+/* MDHTMLRenderer.m */
+"Stroke Count:" = "Stroke Count:";
+"Stroke Count besides Radical:" = "Stroke Count besides Radical:";
+"Hanyu Pinyin:" = "Hanyu Pinyin:";
+"Sample:" = "Sample:";
+"Radical:" = "Radical:";
+"Phonetic 1:" = "Phonetic 1:";
+"Phonetic 2:" = "Phonetic 2:";
+
+
+/* MDIPadViewController.m */
+"Your Keyword" = "Your Keyword";
+
+
+/* MDViewController.m */
+"Matches" = "Matches";
+
+

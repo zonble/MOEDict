@@ -52,33 +52,42 @@
 
 	for (NSDictionary *heteronym in inDictionary[kMDBHeteronymsKey]) {
 		[s appendString:@"<div class=\"heteronym\">"];
-		[s appendString:@"<ul>"];
+		[s appendString:@"<ul class=\"heteronym\">"];
 		if (heteronym[kMDBopomofo1Key]) {
 			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Phonetic 1:", @""), heteronym[kMDBopomofo1Key]];
 		}
 		if (heteronym[kMDBopomofo2Key]) {
 			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Phonetic 2:", @""), heteronym[kMDBopomofo2Key]];
 		}
-		if (heteronym[kMDBPinyinKey]) {
-			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Hanyu Pinyin:", @""), heteronym[kMDBPinyinKey]];
+		if (heteronym[kMDPinyinKey]) {
+			[s appendFormat:@"<li>%@ <b>%@</b></li>", NSLocalizedString(@"Hanyu Pinyin:", @""), heteronym[kMDPinyinKey]];
 		}
 		[s appendString:@"</ul>"];
-		for (NSDictionary *definition in heteronym[kMDBDefinitionsKey]) {
+		for (NSDictionary *definition in heteronym[kMDDefinitionsKey]) {
 			if (definition[kMDBTypeKey]) {
-				[s appendFormat:@"<p><b>[%@]</b> %@</p>", definition[kMDBTypeKey], definition[kMDBDefinitionKey]];
+				[s appendFormat:@"<p><b>[%@]</b> %@</p>", definition[kMDBTypeKey], definition[kMDDefinitionKey]];
 			}
 			else {
-				[s appendFormat:@"<p>%@</p>", definition[kMDBDefinitionKey]];
+				[s appendFormat:@"<p>%@</p>", definition[kMDDefinitionKey]];
 			}
 
-			if (definition[kMDBExcampleKey]) {
-				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Sample:", @""), definition[kMDBExcampleKey]];
+			if (definition[kMDExcampleKey]) {
+				[s appendFormat:@"<p>%@</p>", definition[kMDExcampleKey]];
 			}
-			if (definition[kMDBSynonymsKey]) {
+			if (definition[kMDQuoteKey]) {
+				[s appendFormat:@"<blockquote><p>%@</p></blockquote>", definition[kMDQuoteKey]];
 			}
-			if (definition[kMDBAntonymsKey]) {
+			if (definition[kMDLinkKey]) {
+				[s appendFormat:@"<p>%@</p>", definition[kMDLinkKey]];
 			}
-			if (definition[kMDBSourceKey]) {
+			if (definition[kMDSynonymsKey]) {
+				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Synonyms:", @""), definition[kMDSynonymsKey]];
+			}
+			if (definition[kMDAntonymsKey]) {
+				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Antonyms:", @""), definition[kMDAntonymsKey]];
+			}
+			if (definition[kMDSourceKey]) {
+				[s appendFormat:@"<p>%@</p>", definition[kMDSourceKey]];
 			}
 		}
 		[s appendString:@"</div>"];

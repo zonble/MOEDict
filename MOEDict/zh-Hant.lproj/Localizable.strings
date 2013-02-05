@@ -1,0 +1,22 @@
+/*
+ Scan List
+ ../..
+ */
+/* MDHTMLRenderer.m */
+"Stroke Count:" = "筆劃：";
+"Stroke Count besides Radical:" = "非部首筆劃：";
+"Hanyu Pinyin:" = "漢語拼音：";
+"Sample:" = "範例：";
+"Radical:" = "部首：";
+"Phonetic 1:" = "注音一式：";
+"Phonetic 2:" = "注音二式：";
+
+
+/* MDIPadViewController.m */
+"Your Keyword" = "請輸入關鍵字";
+
+
+/* MDViewController.m */
+"Matches" = "Matches";
+
+

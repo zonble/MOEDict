@@ -10,14 +10,16 @@ NSString *const kMDNonRadicalStrokeCountKey = @"non_radical_stroke_count";
 NSString *const kMDBHeteronymsKey = @"heteronyms";
 NSString *const kMDBopomofo1Key = @"bopomofo";
 NSString *const kMDBopomofo2Key = @"bopomofo2";
-NSString *const kMDBPinyinKey = @"pinyin";
-NSString *const kMDBDefinitionsKey = @"definitions";
+NSString *const kMDPinyinKey = @"pinyin";
+NSString *const kMDDefinitionsKey = @"definitions";
 NSString *const kMDBTypeKey = @"type";
-NSString *const kMDBDefinitionKey = @"definition";
-NSString *const kMDBExcampleKey = @"example";
-NSString *const kMDBSynonymsKey = @"synonyms";
-NSString *const kMDBAntonymsKey = @"antonyms";
-NSString *const kMDBSourceKey = @"source";
+NSString *const kMDDefinitionKey = @"definition";
+NSString *const kMDExcampleKey = @"example";
+NSString *const kMDSynonymsKey = @"synonyms";
+NSString *const kMDAntonymsKey = @"antonyms";
+NSString *const kMDSourceKey = @"source";
+NSString *const kMDQuoteKey = @"quote";
+NSString *const kMDLinkKey = @"link";
 
 @implementation MDDatabase
 {
@@ -117,7 +119,7 @@ NSString *const kMDBSourceKey = @"source";
 			[d setObject:@(heteronymID) forKey:kMDIdentifierKey];
 			if (bopomofo) { [d setObject:bopomofo forKey:kMDBopomofo1Key]; }
 			if (bopomofo2) { [d setObject:bopomofo2 forKey:kMDBopomofo2Key]; }
-			if (pinyin) { [d setObject:pinyin forKey:kMDBPinyinKey]; }
+			if (pinyin) { [d setObject:pinyin forKey:kMDPinyinKey]; }
 			[list addObject:d];
 		}
 	}
@@ -125,7 +127,7 @@ NSString *const kMDBSourceKey = @"source";
 
 	for (NSMutableDictionary *heteronym in list) {
 		NSInteger heteronymID = [[heteronym objectForKey:kMDIdentifierKey] integerValue];
-		const char *definitionSQL = "SELECT id, type, def, example, synonyms, antonyms, source FROM definitions WHERE heteronym_id = ?";
+		const char *definitionSQL = "SELECT id, type, def, example, synonyms, antonyms, source, quote, link FROM definitions WHERE heteronym_id = ?";
 		ObjSqliteStatement *definitionStatement = [[ObjSqliteStatement alloc] initWithSQL:definitionSQL db:db];
 		[definitionStatement bindInt:heteronymID toColumn:1];
 		NSMutableArray *definitions = [NSMutableArray array];
@@ -137,19 +139,23 @@ NSString *const kMDBSourceKey = @"source";
 			NSString *synonyms = [definitionStatement textFromColumn:4];
 			NSString *antonyms = [definitionStatement textFromColumn:5];
 			NSString *source = [definitionStatement textFromColumn:6];
+			NSString *quote = [definitionStatement textFromColumn:7];
+			NSString *link = [definitionStatement textFromColumn:8];
 			if (definitionID) {
 				NSMutableDictionary *d = [NSMutableDictionary dictionary];
 				if (typeString) { [d setObject:typeString forKey:@"type"]; }
-				if (definition) { [d setObject:definition forKey:kMDBDefinitionKey]; }
-				if (example) { [d setObject:example forKey:kMDBExcampleKey]; }
-				if (synonyms) { [d setObject:synonyms forKey:kMDBSynonymsKey]; }
-				if (antonyms) { [d setObject:antonyms forKey:kMDBAntonymsKey]; }
-				if (source) { [d setObject:source forKey:kMDBSourceKey]; }
+				if (definition) { [d setObject:definition forKey:kMDDefinitionKey]; }
+				if (example) { [d setObject:example forKey:kMDExcampleKey]; }
+				if (synonyms) { [d setObject:synonyms forKey:kMDSynonymsKey]; }
+				if (antonyms) { [d setObject:antonyms forKey:kMDAntonymsKey]; }
+				if (source) { [d setObject:source forKey:kMDSourceKey]; }
+				if (quote) { [d setObject:quote forKey:kMDQuoteKey]; }
+				if (link) { [d setObject:link forKey:kMDLinkKey]; }
 				[definitions addObject:d];
 			}
 		}
 		[definitionStatement release];
-		[heteronym setObject:definitions forKey:kMDBDefinitionsKey];
+		[heteronym setObject:definitions forKey:kMDDefinitionsKey];
 	}
 	[response setObject:list forKey:kMDBHeteronymsKey];
 	dispatch_async(dispatch_get_main_queue(), ^{

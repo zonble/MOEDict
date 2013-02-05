@@ -35,3 +35,8 @@ div.heteronym {
   margin: 10px 0;
   padding: 10px 0;
 }
+
+ul.heteronym {
+  font-size: 10pt;
+  color: #333;
+}
