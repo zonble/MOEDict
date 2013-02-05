@@ -1,3 +1,4 @@
+#import <QuartzCore/QuartzCore.h>
 #import "MDIPadViewController.h"
 
 @interface MDIPadMainView : UIView
@@ -9,6 +10,7 @@
 
 - (void)layoutSubviews
 {
+	CATransition *t = [CATransition animation];
 	CGSize size = self.bounds.size;
 	CGFloat w = (size.width > size.height) ? 320 : 260;
 	self.leftView.frame = CGRectMake(0.0, 0.0, w - 1, self.bounds.size.height);
@@ -19,6 +21,7 @@
 	if (!self.rightView.superview) {
 		[self addSubview:self.rightView];
 	}
+	[self.layer addAnimation:t forKey:@"transition"];
 }
 
 @end
@@ -37,7 +40,14 @@
 
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width - 320.0, self.view.bounds.size.height)] autorelease];
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-
+	[[self.webView.subviews lastObject] setBackgroundColor:[UIColor whiteColor]];
+	for (UIView *v in [[self.webView.subviews lastObject] subviews]) {
+		[v setBackgroundColor:[UIColor whiteColor]];
+		v.layer.shadowOffset = CGSizeZero;
+		if ([v isKindOfClass:[UIImageView class]]) {
+			[(UIImageView *)v setImage:nil];
+		}
+	}
 	self.leftView = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, self.view.bounds.size.height)] autorelease];;
 
 	self.searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)] autorelease];
@@ -91,6 +101,11 @@
 			[self.tableView reloadData];
 		}];
 	}
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+	[self.searchBar resignFirstResponder];
 }
 
 @end

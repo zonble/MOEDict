@@ -1,3 +1,4 @@
+#import <QuartzCore/QuartzCore.h>
 #import "MDViewController.h"
 
 @interface MDViewController ()
@@ -42,12 +43,24 @@
 	[self.view addSubview:self.searchBar];
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 44.0, self.view.bounds.size.width, self.view.bounds.size.height - 44.0)] autorelease];
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	[[self.webView.subviews lastObject] setBackgroundColor:[UIColor whiteColor]];
+	for (UIView *v in [[self.webView.subviews lastObject] subviews]) {
+		[v setBackgroundColor:[UIColor whiteColor]];
+		v.layer.shadowOffset = CGSizeZero;
+		if ([v isKindOfClass:[UIImageView class]]) {
+			[(UIImageView *)v setImage:nil];
+		}
+	}
 	[self.view addSubview:self.webView];
 }
 
 - (void)viewDidLoad
 {
 	[super viewDidLoad];
+	[self.db fetchDefinitionsWithKeyword:@"萌" callback:^(NSDictionary *response) {
+		NSString *HTML = [self.HTMLRenderer renderHTML:response];
+		[self.webView loadHTMLString:HTML baseURL:nil];
+	}];
 }
 
 - (void)viewDidUnload

@@ -11,6 +11,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	UIImage *whiteImage = nil;
+	UIGraphicsBeginImageContext(CGSizeMake(320.0, 44.0));
+	[[UIColor whiteColor] setFill];
+	[[UIBezierPath bezierPathWithRect:CGRectMake(0.0, 0.0, 320.0, 44.0)] fill];
+	whiteImage = UIGraphicsGetImageFromCurrentImageContext();
+	UIGraphicsEndImageContext();
+
+	[[UISearchBar appearance] setBackgroundImage:whiteImage];
+
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 	self.rootViewController = [[[IsIPad() ? [MDIPadViewController class] : [MDViewController class] alloc] init] autorelease];
 	self.window.rootViewController = self.rootViewController;

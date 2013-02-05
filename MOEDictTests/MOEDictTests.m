@@ -18,7 +18,6 @@
 	__block BOOL done = NO;
 
 	[db fetchCompletionListWithString:@"萌" callback:^(NSArray *list) {
-		NSLog(@"list:%@", list);
 		for (NSDictionary *d in list) {
 			STAssertNotNil(d[kMDIdentifierKey], @"ID must not be nil");
 			STAssertTrue([d[kMDIdentifierKey] integerValue] > 0, @"ID must not be nil");

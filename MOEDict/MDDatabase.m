@@ -125,7 +125,6 @@ NSString *const kMDBSourceKey = @"source";
 
 	for (NSMutableDictionary *heteronym in list) {
 		NSInteger heteronymID = [[heteronym objectForKey:kMDIdentifierKey] integerValue];
-		NSLog(@"heteronymID:%d", heteronymID);
 		const char *definitionSQL = "SELECT id, type, def, example, synonyms, antonyms, source FROM definitions WHERE heteronym_id = ?";
 		ObjSqliteStatement *definitionStatement = [[ObjSqliteStatement alloc] initWithSQL:definitionSQL db:db];
 		[definitionStatement bindInt:heteronymID toColumn:1];

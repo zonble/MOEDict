@@ -1,0 +1,39 @@
+body {
+  font-size: 15pt;
+  font-family: Helvetica, sans-serif;
+  margin: 30px;
+}
+
+h1.char_title {
+  font-size: 50pt;
+  font-family: Times, serif;
+  display: block;
+  width: 100px;
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+div.char_info {
+  display: block;
+  width: 300px;
+  float: right;
+  font-size: 12pt;
+  color: #333;
+}
+
+h1.phrase_title {
+  font-size: 35pt;
+  font-family: Times, serif;
+}
+
+p {
+  line-height: 1.2em;
+  margin: 1em 0;
+}
+
+div.heteronym {
+  border-top: 1px solid #CCC;
+  margin: 10px 0;
+  padding: 10px 0;
+}

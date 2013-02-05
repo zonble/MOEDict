@@ -40,6 +40,7 @@
 		D478EA5116C146DE008E8EFE /* MDIPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D478EA5016C146DE008E8EFE /* MDIPadViewController.m */; };
 		D478EA5316C14FA3008E8EFE /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5216C14FA3008E8EFE /* style.css */; };
 		D478EA5516C154F2008E8EFE /* style_ipad.css in Resources */ = {isa = PBXBuildFile; fileRef = D478EA5416C154F2008E8EFE /* style_ipad.css */; };
+		D478EA5716C15B51008E8EFE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478EA5616C15B51008E8EFE /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		D478EA5016C146DE008E8EFE /* MDIPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDIPadViewController.m; sourceTree = "<group>"; };
 		D478EA5216C14FA3008E8EFE /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
 		D478EA5416C154F2008E8EFE /* style_ipad.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style_ipad.css; sourceTree = "<group>"; };
+		D478EA5616C15B51008E8EFE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D478EA5716C15B51008E8EFE /* QuartzCore.framework in Frameworks */,
 				D478A23116C00828001AAA77 /* libsqlite3.dylib in Frameworks */,
 				D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */,
 				D478A1F716C006BE001AAA77 /* Foundation.framework in Frameworks */,
@@ -143,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D478A23016C00828001AAA77 /* libsqlite3.dylib */,
+				D478EA5616C15B51008E8EFE /* QuartzCore.framework */,
 				D478A1F416C006BE001AAA77 /* UIKit.framework */,
 				D478A1F616C006BE001AAA77 /* Foundation.framework */,
 				D478A1F816C006BE001AAA77 /* CoreGraphics.framework */,
