@@ -85,7 +85,7 @@
 				[s appendFormat:@"<h3>%@</h3>", NSLocalizedString(@"Synonyms:", @"")];
 				[s appendString:@"<ul>"];
 				for (NSString *synonym in definition[kMDSynonymsKey]) {
-					[s appendFormat:@"<li>%@</li>", synonym];
+					[s appendFormat:@"<li><a href=\"moe://%@\">%@</a></li>", [synonym stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], synonym];
 				}
 				[s appendString:@"</ul>"];
 			}
@@ -93,7 +93,7 @@
 				[s appendFormat:@"<h3>%@</h3>", NSLocalizedString(@"Antonyms:", @"")];
 				[s appendString:@"<ul>"];
 				for (NSString *antonyms in definition[kMDAntonymsKey]) {
-					[s appendFormat:@"<li>%@</li>", antonyms];
+					[s appendFormat:@"<li><a href=\"moe://%@\">%@</a></li>", [antonyms stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding], antonyms];
 				}
 				[s appendString:@"</ul>"];
 			}

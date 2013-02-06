@@ -39,6 +39,7 @@
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width - 320.0, self.view.bounds.size.height)] autorelease];
+	self.webView.delegate = self;
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	[[self.webView.subviews lastObject] setBackgroundColor:[UIColor whiteColor]];
 	for (UIView *v in [[self.webView.subviews lastObject] subviews]) {
@@ -68,6 +69,15 @@
 	[(MDIPadMainView *)self.view setRightView:self.webView];
 }
 
+- (void)searchWithKeyword:(NSString *)inKeyword
+{
+	[self.db fetchDefinitionsWithKeyword:inKeyword callback:^(NSDictionary *response) {
+		NSString *HTML = [self.HTMLRenderer renderHTML:response];
+		[self.webView loadHTMLString:HTML baseURL:nil];
+		[self.searchBar resignFirstResponder];
+	}];
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -78,18 +88,6 @@
 		[self.webView loadHTMLString:HTML baseURL:nil];
 		[self.searchBar resignFirstResponder];
 	}];
-}
-
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
-{
-	NSString *text = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-	if ([text length]) {
-		[self.db fetchDefinitionsWithKeyword:text callback:^(NSDictionary *response) {
-			NSString *HTML = [self.HTMLRenderer renderHTML:response];
-			[self.webView loadHTMLString:HTML baseURL:nil];
-			[searchBar resignFirstResponder];
-		}];
-	}
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText

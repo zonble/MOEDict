@@ -42,6 +42,7 @@
 	self.searchDisplayController.searchResultsTitle = NSLocalizedString(@"Matches", @"");
 	[self.view addSubview:self.searchBar];
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 44.0, self.view.bounds.size.width, self.view.bounds.size.height - 44.0)] autorelease];
+	self.webView.delegate = self;
 	self.webView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 	[[self.webView.subviews lastObject] setBackgroundColor:[UIColor whiteColor]];
 	for (UIView *v in [[self.webView.subviews lastObject] subviews]) {
@@ -73,6 +74,16 @@
 - (void)didReceiveMemoryWarning
 {
 	[super didReceiveMemoryWarning];
+}
+
+- (void)searchWithKeyword:(NSString *)inKeyword
+{
+	[self.db fetchDefinitionsWithKeyword:inKeyword callback:^(NSDictionary *response) {
+		NSString *HTML = [self.HTMLRenderer renderHTML:response];
+		[self.webView loadHTMLString:HTML baseURL:nil];
+		[self.searchBar resignFirstResponder];
+		[self.searchDisplayController setActive:NO animated:YES];
+	}];
 }
 
 #pragma mark -
@@ -116,12 +127,7 @@
 {
 	NSString *text = [searchBar.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 	if ([text length]) {
-		[self.db fetchDefinitionsWithKeyword:text callback:^(NSDictionary *response) {
-			NSString *HTML = [self.HTMLRenderer renderHTML:response];
-			[self.webView loadHTMLString:HTML baseURL:nil];
-			[searchBar resignFirstResponder];
-			[self.searchDisplayController setActive:NO animated:YES];
-		}];
+		[self searchWithKeyword:text];
 	}
 }
 
@@ -135,6 +141,31 @@
 		}];
 	}
 }
+
+#pragma mark -
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+{
+	NSString *URLString = [[request URL] absoluteString];
+	if ([URLString hasPrefix:@"moe://"]) {
+		NSString *s = [[URLString substringFromIndex:[@"moe://" length]] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		if ([s length]) {
+			[self searchWithKeyword:s];
+			return NO;
+		}
+	}
+	return YES;
+}
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+}
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+}
+
 
 @synthesize searchDisplayController = searchDisplayController;
 

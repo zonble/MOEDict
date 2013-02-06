@@ -4,7 +4,12 @@
 // The main view controller.
 
 @interface MDViewController : UIViewController
-	<UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
+	<UITableViewDataSource,
+	UITableViewDelegate,
+	UISearchBarDelegate,
+	UIWebViewDelegate>
+
+- (void)searchWithKeyword:(NSString *)inKeyword;
 
 @property (retain, nonatomic) MDDatabase *db;
 @property (retain, nonatomic) MDHTMLRenderer *HTMLRenderer;
