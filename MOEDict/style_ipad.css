@@ -1,8 +1,25 @@
 body {
   font-size: 15pt;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, "Heiti TC", sans-serif;
   margin: 30px;
 }
+
+p.def {
+  margin-top: 30px;
+}
+
+p.def_type {
+  margin-top: 30px;
+  margin-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+blockquote {
+  margin: 10px 0;
+  padding: 0 20px;
+  border-left: 2px solid #CCC;
+}
+
 
 h1.char_title {
   font-size: 50pt;
@@ -20,6 +37,12 @@ div.char_info {
   float: right;
   font-size: 12pt;
   color: #333;
+}
+
+div.char_info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 h1.phrase_title {
@@ -41,4 +64,13 @@ div.heteronym {
 ul.heteronym {
   font-size: 12pt;
   color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+span.type {
+  color: white;
+  font-weight: bold;
+  background-color: black;
 }

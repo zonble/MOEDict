@@ -64,27 +64,41 @@
 		}
 		[s appendString:@"</ul>"];
 		for (NSDictionary *definition in heteronym[kMDDefinitionsKey]) {
-			if (definition[kMDBTypeKey]) {
-				[s appendFormat:@"<p><b>[%@]</b> %@</p>", definition[kMDBTypeKey], definition[kMDDefinitionKey]];
-			}
-			else {
-				[s appendFormat:@"<p>%@</p>", definition[kMDDefinitionKey]];
+			if (definition[kMDDefinitionKey]) {
+				if (definition[kMDBTypeKey]) {
+					[s appendFormat:@"<p class=\"def_type\"><span class=\"type\">%@</span> %@</p>", definition[kMDBTypeKey], definition[kMDDefinitionKey]];
+				}
+				else {
+					[s appendFormat:@"<p class=\"def\">%@</p>", definition[kMDDefinitionKey]];
+				}
 			}
 
 			if (definition[kMDExcampleKey]) {
 				[s appendFormat:@"<p>%@</p>", definition[kMDExcampleKey]];
 			}
 			if (definition[kMDQuoteKey]) {
-				[s appendFormat:@"<blockquote><p>%@</p></blockquote>", definition[kMDQuoteKey]];
+				for (NSString *quote in definition[kMDQuoteKey]) {
+					[s appendFormat:@"<blockquote><p>%@</p></blockquote>", quote];
+				}
+			}
+			if (definition[kMDSynonymsKey]) {
+				[s appendFormat:@"<h3>%@</h3>", NSLocalizedString(@"Synonyms:", @"")];
+				[s appendString:@"<ul>"];
+				for (NSString *synonym in definition[kMDSynonymsKey]) {
+					[s appendFormat:@"<li>%@</li>", synonym];
+				}
+				[s appendString:@"</ul>"];
+			}
+			if (definition[kMDAntonymsKey]) {
+				[s appendFormat:@"<h3>%@</h3>", NSLocalizedString(@"Antonyms:", @"")];
+				[s appendString:@"<ul>"];
+				for (NSString *antonyms in definition[kMDAntonymsKey]) {
+					[s appendFormat:@"<li>%@</li>", antonyms];
+				}
+				[s appendString:@"</ul>"];
 			}
 			if (definition[kMDLinkKey]) {
 				[s appendFormat:@"<p>%@</p>", definition[kMDLinkKey]];
-			}
-			if (definition[kMDSynonymsKey]) {
-				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Synonyms:", @""), definition[kMDSynonymsKey]];
-			}
-			if (definition[kMDAntonymsKey]) {
-				[s appendFormat:@"<p>%@ %@</p>", NSLocalizedString(@"Antonyms:", @""), definition[kMDAntonymsKey]];
 			}
 			if (definition[kMDSourceKey]) {
 				[s appendFormat:@"<p>%@</p>", definition[kMDSourceKey]];

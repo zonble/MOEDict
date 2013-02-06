@@ -146,11 +146,17 @@ NSString *const kMDLinkKey = @"link";
 				if (typeString) { [d setObject:typeString forKey:@"type"]; }
 				if (definition) { [d setObject:definition forKey:kMDDefinitionKey]; }
 				if (example) { [d setObject:example forKey:kMDExcampleKey]; }
-				if (synonyms) { [d setObject:synonyms forKey:kMDSynonymsKey]; }
-				if (antonyms) { [d setObject:antonyms forKey:kMDAntonymsKey]; }
 				if (source) { [d setObject:source forKey:kMDSourceKey]; }
-				if (quote) { [d setObject:quote forKey:kMDQuoteKey]; }
 				if (link) { [d setObject:link forKey:kMDLinkKey]; }
+				if (synonyms) {
+					[d setObject:[synonyms componentsSeparatedByString:@","] forKey:kMDSynonymsKey];
+				}
+				if (antonyms) {
+					[d setObject:[antonyms componentsSeparatedByString:@","] forKey:kMDAntonymsKey];
+				}
+				if (quote) {
+					[d setObject:[quote componentsSeparatedByString:@","] forKey:kMDQuoteKey];
+				}
 				[definitions addObject:d];
 			}
 		}

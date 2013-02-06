@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4538FD716C2BBE700330EF5 /* Settings.bundle */; };
 		D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F416C006BE001AAA77 /* UIKit.framework */; };
 		D478A1F716C006BE001AAA77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F616C006BE001AAA77 /* Foundation.framework */; };
 		D478A1F916C006BE001AAA77 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F816C006BE001AAA77 /* CoreGraphics.framework */; };
@@ -60,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4538FD716C2BBE700330EF5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D478A1F016C006BE001AAA77 /* MOEDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOEDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D478A1F416C006BE001AAA77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D478A1F616C006BE001AAA77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -138,6 +140,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D4538FD916C2BBFA00330EF5 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D478A20316C006BF001AAA77 /* MDAppDelegate.h */,
+				D478A20416C006BF001AAA77 /* MDAppDelegate.m */,
+				D478A24D16C02805001AAA77 /* MDViewController.h */,
+				D478A24E16C02806001AAA77 /* MDViewController.m */,
+				D478EA4F16C146DE008E8EFE /* MDIPadViewController.h */,
+				D478EA5016C146DE008E8EFE /* MDIPadViewController.m */,
+				D478A25016C0316A001AAA77 /* MDHTMLRenderer.h */,
+				D478A25116C0316A001AAA77 /* MDHTMLRenderer.m */,
+				D478A23216C00852001AAA77 /* MDDatabase.h */,
+				D478A23316C00852001AAA77 /* MDDatabase.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		D478A1E516C006BE001AAA77 = {
 			isa = PBXGroup;
 			children = (
@@ -173,17 +192,8 @@
 		D478A1FA16C006BE001AAA77 /* MOEDict */ = {
 			isa = PBXGroup;
 			children = (
+				D4538FD916C2BBFA00330EF5 /* Classes */,
 				D478A22916C007DC001AAA77 /* External Libraries */,
-				D478A20316C006BF001AAA77 /* MDAppDelegate.h */,
-				D478A20416C006BF001AAA77 /* MDAppDelegate.m */,
-				D478A24D16C02805001AAA77 /* MDViewController.h */,
-				D478A24E16C02806001AAA77 /* MDViewController.m */,
-				D478EA4F16C146DE008E8EFE /* MDIPadViewController.h */,
-				D478EA5016C146DE008E8EFE /* MDIPadViewController.m */,
-				D478A25016C0316A001AAA77 /* MDHTMLRenderer.h */,
-				D478A25116C0316A001AAA77 /* MDHTMLRenderer.m */,
-				D478A23216C00852001AAA77 /* MDDatabase.h */,
-				D478A23316C00852001AAA77 /* MDDatabase.m */,
 				D478A1FB16C006BF001AAA77 /* Supporting Files */,
 			);
 			path = MOEDict;
@@ -192,6 +202,7 @@
 		D478A1FB16C006BF001AAA77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4538FD716C2BBE700330EF5 /* Settings.bundle */,
 				D478EA6716C2AC8F008E8EFE /* Images */,
 				D478A23516C00973001AAA77 /* db.sqlite3 */,
 				D478EA5216C14FA3008E8EFE /* style.css */,
@@ -344,6 +355,7 @@
 				D478EA9B16C2AD7A008E8EFE /* Icon-72@2x.png in Resources */,
 				D478EA9C16C2AD7A008E8EFE /* Icon.png in Resources */,
 				D478EA9D16C2AD7A008E8EFE /* Icon@2x.png in Resources */,
+				D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,24 +1,49 @@
 body {
   font-size: 12pt;
-  font-family: Helvetica, sans-serif;
+  font-family: Helvetica, "Heiti TC", sans-serif;
   margin: 10px;
 }
 
+p.def {
+  margin-top: 30px;
+}
+
+p.def_type {
+  margin-top: 30px;
+  margin-left: 1.5em;
+  text-indent: -1.5em;
+}
+
+blockquote {
+  margin: 10px 0;
+  padding: 0 20px;
+  border-left: 2px solid #CCC;
+}
+
 h1.char_title {
-  font-size: 22pt;
-  font-family: Times, serif;
+  font-size: 35pt;
+  font-family: Palatino, Times, serif;
   display: block;
   width: 100px;
   float: left;
+  margin: 0;
+  padding: 0;
 }
 
 div.char_info {
   display: block;
-  width: 200px;
+  width: 150px;
   float: right;
   font-size: 10pt;
   color: #333;
 }
+
+div.char_info ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 
 h1.phrase_title {
   font-size: 20pt;
@@ -39,4 +64,13 @@ div.heteronym {
 ul.heteronym {
   font-size: 10pt;
   color: #333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+span.type {
+  color: white;
+  font-weight: bold;
+  background-color: black;
 }

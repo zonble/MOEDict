@@ -11,6 +11,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+	[[NSUserDefaults standardUserDefaults] setObject:version forKey:@"version_preference"];
+
 	UIImage *whiteImage = nil;
 	UIGraphicsBeginImageContext(CGSizeMake(320.0, 44.0));
 	[[UIColor whiteColor] setFill];

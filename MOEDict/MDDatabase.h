@@ -13,10 +13,10 @@ extern NSString *const kMDDefinitionsKey;
 extern NSString *const kMDBTypeKey;
 extern NSString *const kMDDefinitionKey;
 extern NSString *const kMDExcampleKey;
-extern NSString *const kMDSynonymsKey;
-extern NSString *const kMDAntonymsKey;
+extern NSString *const kMDSynonymsKey; // array
+extern NSString *const kMDAntonymsKey; // array
 extern NSString *const kMDSourceKey;
-extern NSString *const kMDQuoteKey;
+extern NSString *const kMDQuoteKey; // array
 extern NSString *const kMDLinkKey;
 
 // An interface which helps search with the database of MOE
