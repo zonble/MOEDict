@@ -1,2 +1,5 @@
 /* Localized versions of Info.plist keys */
 
+CFBundleName = "3 Piggies";
+CFBundleDisplayName = "3 Piggies";
+NSHumanReadableCopyright = "Copyright © Weizhong Yang, All rights reserved.";

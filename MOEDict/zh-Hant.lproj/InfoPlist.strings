@@ -1,2 +1,5 @@
 /* Localized versions of Info.plist keys */
 
+CFBundleName = "三隻小豬";
+CFBundleDisplayName = "三隻小豬";
+NSHumanReadableCopyright = "Copyright © Weizhong Yang, All rights reserved.";
