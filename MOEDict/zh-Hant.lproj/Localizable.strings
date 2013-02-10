@@ -1,12 +1,13 @@
 /*
- Scan List
- ../..
- */
+Scan List
+../..
+*/
 /* MDHTMLRenderer.m */
 "Stroke Count:" = "筆劃：";
+"Antonyms:" = "反義詞：";
 "Stroke Count besides Radical:" = "非部首筆劃：";
 "Hanyu Pinyin:" = "漢語拼音：";
-"Sample:" = "範例：";
+"Synonyms:" = "同義詞：";
 "Radical:" = "部首：";
 "Phonetic 1:" = "注音一式：";
 "Phonetic 2:" = "注音二式：";

@@ -37,6 +37,8 @@
 	<string>ZNBL</string>
 	<key>CFBundleVersion</key>
 	<string>0.1</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIPrerenderedIcon</key>
@@ -45,6 +47,16 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIStatusBarTintParameters</key>
+	<dict>
+		<key>UINavigationBar</key>
+		<dict>
+			<key>Style</key>
+			<string>UIBarStyleDefault</string>
+			<key>Translucent</key>
+			<false/>
+		</dict>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -56,7 +68,5 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>LSHasLocalizedDisplayName</key>
-	<true/>
 </dict>
 </plist>
