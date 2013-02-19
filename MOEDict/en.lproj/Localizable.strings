@@ -3,10 +3,11 @@ Scan List
 ../..
 */
 /* MDHTMLRenderer.m */
+"Synonyms:" = "Synonyms:";
+"Antonyms:" = "Antonyms:";
 "Stroke Count:" = "Stroke Count:";
 "Stroke Count besides Radical:" = "Stroke Count besides Radical:";
 "Hanyu Pinyin:" = "Hanyu Pinyin:";
-"Sample:" = "Sample:";
 "Radical:" = "Radical:";
 "Phonetic 1:" = "Phonetic 1:";
 "Phonetic 2:" = "Phonetic 2:";

@@ -1,7 +1,9 @@
 # 3 Piggies (三隻小豬) for iOS
 
 * Weizhong Yang a.k.a *zonble*
-* zonble at gmail.com
+* zonble at gmail dot com
+
+![Screenshot](https://raw.github.com/zonble/MOEDict/master/Screenshots/iPadSmall.png)
 
 ## Introduction
 
