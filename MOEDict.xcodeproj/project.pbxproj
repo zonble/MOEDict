@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D4B286DF16D3DCAA009B806E /* MOEDictScript */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D4B286E016D3DCAA009B806E /* Build configuration list for PBXAggregateTarget "MOEDictScript" */;
+			buildPhases = (
+				D4B286E316D3DCBF009B806E /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = MOEDictScript;
+			productName = MOEDictScript;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4538FD716C2BBE700330EF5 /* Settings.bundle */; };
 		D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F416C006BE001AAA77 /* UIKit.framework */; };
@@ -57,6 +71,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = D478A1EF16C006BE001AAA77;
 			remoteInfo = MOEDict;
+		};
+		D4B286E416D3DCCD009B806E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D478A1E716C006BE001AAA77 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4B286DF16D3DCAA009B806E;
+			remoteInfo = MOEDictScript;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -279,6 +300,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D4B286E516D3DCCD009B806E /* PBXTargetDependency */,
 			);
 			name = MOEDict;
 			productName = MOEDict;
@@ -327,6 +349,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				D4B286DF16D3DCAA009B806E /* MOEDictScript */,
 				D478A1EF16C006BE001AAA77 /* MOEDict */,
 				D478A21016C006BF001AAA77 /* MOEDictTests */,
 			);
@@ -384,6 +407,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		D4B286E316D3DCBF009B806E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -f '/usr/bin/git' ]\nthen\nGIT_VERSION=$(/usr/bin/git log --format='%h' -1)\nfi\n\nif [ -f '/usr/local/git/bin/git' ]\nthen\nGIT_VERSION=$(/usr/local/git/bin/git log --format='%h' -1)\nfi\n\necho \"#define GIT_VERSION ${GIT_VERSION}\" > InfoPlist.h";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -420,6 +456,11 @@
 			isa = PBXTargetDependency;
 			target = D478A1EF16C006BE001AAA77 /* MOEDict */;
 			targetProxy = D478A21616C006BF001AAA77 /* PBXContainerItemProxy */;
+		};
+		D4B286E516D3DCCD009B806E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4B286DF16D3DCAA009B806E /* MOEDictScript */;
+			targetProxy = D4B286E416D3DCCD009B806E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +548,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = MOEDict;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,6 +563,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
+				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
+				INFOPLIST_PREPROCESS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = MOEDict;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,6 +606,20 @@
 			};
 			name = Release;
 		};
+		D4B286E116D3DCAA009B806E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D4B286E216D3DCAA009B806E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -590,6 +649,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		D4B286E016D3DCAA009B806E /* Build configuration list for PBXAggregateTarget "MOEDictScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4B286E116D3DCAA009B806E /* Debug */,
+				D4B286E216D3DCAA009B806E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

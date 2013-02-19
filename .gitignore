@@ -11,3 +11,4 @@
 xcuserdata
 .DS_Store
 *.sqlite3
+InfoPlist.h

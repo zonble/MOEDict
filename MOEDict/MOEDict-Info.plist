@@ -32,11 +32,13 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>GIT_VERSION</string>
 	<key>CFBundleSignature</key>
 	<string>ZNBL</string>
 	<key>CFBundleVersion</key>
 	<string>0.1</string>
+	<key>LSHasLocalizedDisplayName</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIPrerenderedIcon</key>
@@ -56,7 +58,5 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>LSHasLocalizedDisplayName</key>
-	<true/>
 </dict>
 </plist>
