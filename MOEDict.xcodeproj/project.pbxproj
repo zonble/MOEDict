@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		D447953117EBF2170086A027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D447953017EBF2170086A027 /* Images.xcassets */; };
 		D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4538FD716C2BBE700330EF5 /* Settings.bundle */; };
 		D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F416C006BE001AAA77 /* UIKit.framework */; };
 		D478A1F716C006BE001AAA77 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F616C006BE001AAA77 /* Foundation.framework */; };
@@ -82,6 +83,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D447953017EBF2170086A027 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4538FD716C2BBE700330EF5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D478A1F016C006BE001AAA77 /* MOEDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOEDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D478A1F416C006BE001AAA77 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -223,6 +225,7 @@
 		D478A1FB16C006BF001AAA77 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D447953017EBF2170086A027 /* Images.xcassets */,
 				D4538FD716C2BBE700330EF5 /* Settings.bundle */,
 				D478EA6716C2AC8F008E8EFE /* Images */,
 				D478A23516C00973001AAA77 /* db.sqlite3 */,
@@ -333,7 +336,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MD;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = zonble;
 			};
 			buildConfigurationList = D478A1EA16C006BE001AAA77 /* Build configuration list for PBXProject "MOEDict" */;
@@ -376,6 +379,7 @@
 				D478EA8516C2AC8F008E8EFE /* iTunesArtwork in Resources */,
 				D478EA9A16C2AD7A008E8EFE /* Icon-72.png in Resources */,
 				D478EA9B16C2AD7A008E8EFE /* Icon-72@2x.png in Resources */,
+				D447953117EBF2170086A027 /* Images.xcassets in Resources */,
 				D478EA9C16C2AD7A008E8EFE /* Icon.png in Resources */,
 				D478EA9D16C2AD7A008E8EFE /* Icon@2x.png in Resources */,
 				D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */,
@@ -517,6 +521,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -545,6 +550,8 @@
 		D478A22416C006BF001AAA77 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
@@ -560,6 +567,8 @@
 		D478A22516C006BF001AAA77 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
