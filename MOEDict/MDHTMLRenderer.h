@@ -1,5 +1,5 @@
-// A class which renders character or phrase definitions into HTML
-// format.
+/*! A class which renders character or phrase definitions into HTML
+format. */
 
 @interface MDHTMLRenderer : NSObject
 
