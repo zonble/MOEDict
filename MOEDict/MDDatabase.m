@@ -40,7 +40,7 @@ NSString *const kMDLinkKey = @"link";
 	if (self) {
 		db = [[ObjSqliteDB alloc] initWithPath:inPath];
 		NSAssert(db != nil, @"Database must be created.");
-		sqlite3* ObjSqliteDB = db.sqliteDB;
+		__unused sqlite3* ObjSqliteDB = db.sqliteDB;
 		NSAssert(ObjSqliteDB != nil, @"Database must be created.");
 		operationQueue = [[NSOperationQueue alloc] init];
 		[operationQueue setMaxConcurrentOperationCount:1];
@@ -185,8 +185,8 @@ NSString *const kMDLinkKey = @"link";
 	[statement bindText:inKeyword toColumn:1];
 	[statement step];
 	NSInteger index = [statement intFromColumn:0];
-	NSString *title = [statement textFromColumn:1];
 	if (index) {
+		__unused NSString *title = [statement textFromColumn:1];
 		NSAssert([title isEqualToString:inKeyword], @"Keyword must match.");
 	}
 	return index;

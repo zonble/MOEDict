@@ -21,7 +21,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.2 GIT_VERSION</string>
+	<string>0.3</string>
 	<key>CFBundleSignature</key>
 	<string>ZNBL</string>
 	<key>CFBundleVersion</key>

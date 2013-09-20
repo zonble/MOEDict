@@ -305,6 +305,11 @@
 				CLASSPREFIX = MD;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = zonble;
+				TargetAttributes = {
+					D478A1EF16C006BE001AAA77 = {
+						DevelopmentTeam = X29ZB2LBKB;
+					};
+				};
 			};
 			buildConfigurationList = D478A1EA16C006BE001AAA77 /* Build configuration list for PBXProject "MOEDict" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -508,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
@@ -525,6 +531,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MOEDict/MOEDict-Prefix.pch";
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
