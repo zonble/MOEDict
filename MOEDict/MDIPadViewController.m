@@ -15,6 +15,14 @@
 	CGFloat w = (size.width > size.height) ? 320 : 260;
 	self.leftView.frame = CGRectMake(0.0, 0.0, w - 1, self.bounds.size.height);
 	self.rightView.frame = CGRectMake(w, 0.0, self.bounds.size.width - w, self.bounds.size.height);
+
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
+	if ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0) {
+		self.leftView.frame = CGRectMake(0.0, 20.0, w - 1, self.bounds.size.height - 20.0);
+		self.rightView.frame = CGRectMake(w, 20.0, self.bounds.size.width - w, self.bounds.size.height - 20.0);
+	}
+#endif
+
 	if (!self.leftView.superview) {
 		[self addSubview:self.leftView];
 	}
