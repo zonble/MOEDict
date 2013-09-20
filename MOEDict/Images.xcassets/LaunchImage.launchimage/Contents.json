@@ -22,6 +22,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "Default-iOS7-Portrait.png",
       "scale" : "1x"
     },
     {
@@ -29,6 +30,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "Default-iOS7-Landscape.png",
       "scale" : "1x"
     },
     {
@@ -36,6 +38,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "Default-iOS7-Portrait@2x.png",
       "scale" : "2x"
     },
     {
@@ -43,6 +46,7 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
+      "filename" : "Default-iOS7-Landscape@2x.png",
       "scale" : "2x"
     },
     {
