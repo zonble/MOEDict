@@ -1,0 +1,2 @@
+ language: objective-c
+ script: sh get_db.sh; xcodebuild -sdk iphonesimulator -arch i386 clean build
