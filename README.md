@@ -3,6 +3,8 @@
 * Weizhong Yang a.k.a *zonble*
 * zonble at gmail dot com
 
+[![Build Status](https://travis-ci.org/zonble/MOEDict.png?branch=master)](https://travis-ci.org/zonble/MOEDict)
+
 ![Screenshot](https://raw.github.com/zonble/MOEDict/master/Screenshots/iPadSmall.png)
 
 ## Introduction
