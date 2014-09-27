@@ -54,14 +54,10 @@
 	}
 	[self.view addSubview:self.webView];
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-	if ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0) {
-		self.view.backgroundColor = [UIColor lightGrayColor];
-		self.searchBar.frame = CGRectMake(0.0, 20.0, self.view.bounds.size.width, 44.0);
-		self.searchBar.barTintColor = [UIColor lightGrayColor];
-		self.webView.frame = CGRectMake(0.0, 64.0, self.view.bounds.size.width, self.view.bounds.size.height - 64.0);
-	}
-#endif
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.searchBar.frame = CGRectMake(0.0, 20.0, self.view.bounds.size.width, 44.0);
+	self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+	self.webView.frame = CGRectMake(0.0, 64.0, self.view.bounds.size.width, self.view.bounds.size.height - 64.0);
 }
 
 - (void)viewDidLoad

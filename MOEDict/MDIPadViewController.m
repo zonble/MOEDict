@@ -13,15 +13,8 @@
 	CATransition *t = [CATransition animation];
 	CGSize size = self.bounds.size;
 	CGFloat w = (size.width > size.height) ? 320 : 260;
-	self.leftView.frame = CGRectMake(0.0, 0.0, w - 1, self.bounds.size.height);
-	self.rightView.frame = CGRectMake(w, 0.0, self.bounds.size.width - w, self.bounds.size.height);
-
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
-	if ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0) {
-		self.leftView.frame = CGRectMake(0.0, 20.0, w - 1, self.bounds.size.height - 20.0);
-		self.rightView.frame = CGRectMake(w, 20.0, self.bounds.size.width - w, self.bounds.size.height - 20.0);
-	}
-#endif
+	self.leftView.frame = CGRectMake(0.0, 20.0, w - 1, self.bounds.size.height - 20.0);
+	self.rightView.frame = CGRectMake(w, 20.0, self.bounds.size.width - w, self.bounds.size.height - 20.0);
 
 	if (!self.leftView.superview) {
 		[self addSubview:self.leftView];
@@ -45,6 +38,7 @@
 {
 	self.view = [[[MDIPadMainView alloc] initWithFrame:[UIScreen mainScreen].bounds] autorelease];
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	self.view.backgroundColor = [UIColor whiteColor];
 
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width - 320.0, self.view.bounds.size.height)] autorelease];
 	self.webView.delegate = self;
@@ -61,6 +55,7 @@
 
 	self.searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, 44.0)] autorelease];
 	self.searchBar.delegate = self;
+	self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
 	self.searchBar.placeholder = NSLocalizedString(@"Your Keyword", @"");
 	self.searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 

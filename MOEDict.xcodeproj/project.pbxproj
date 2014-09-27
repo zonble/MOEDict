@@ -21,6 +21,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		D446DE1C19D7239F0059AF36 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D446DE1B19D722F50059AF36 /* LaunchScreen.xib */; };
 		D447953117EBF2170086A027 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D447953017EBF2170086A027 /* Images.xcassets */; };
 		D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4538FD716C2BBE700330EF5 /* Settings.bundle */; };
 		D478A1F516C006BE001AAA77 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D478A1F416C006BE001AAA77 /* UIKit.framework */; };
@@ -72,6 +73,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D446DE1B19D722F50059AF36 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = MOEDict/LaunchScreen.xib; sourceTree = "<group>"; };
 		D447953017EBF2170086A027 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4538FD716C2BBE700330EF5 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		D478A1F016C006BE001AAA77 /* MOEDict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MOEDict.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 		D478A1E516C006BE001AAA77 = {
 			isa = PBXGroup;
 			children = (
+				D446DE1B19D722F50059AF36 /* LaunchScreen.xib */,
 				D478A1FA16C006BE001AAA77 /* MOEDict */,
 				D478A21816C006BF001AAA77 /* MOEDictTests */,
 				D478A1F316C006BE001AAA77 /* Frameworks */,
@@ -294,7 +297,7 @@
 			name = MOEDictTests;
 			productName = MOEDictTests;
 			productReference = D478A21116C006BF001AAA77 /* MOEDictTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -343,6 +346,7 @@
 				D478EA5A16C1747F008E8EFE /* Localizable.strings in Resources */,
 				D478EA8516C2AC8F008E8EFE /* iTunesArtwork in Resources */,
 				D447953117EBF2170086A027 /* Images.xcassets in Resources */,
+				D446DE1C19D7239F0059AF36 /* LaunchScreen.xib in Resources */,
 				D4538FD816C2BBE700330EF5 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +523,7 @@
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
 				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = MOEDict;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -537,7 +541,7 @@
 				INFOPLIST_FILE = "MOEDict/MOEDict-Info.plist";
 				INFOPLIST_PREFIX_HEADER = InfoPlist.h;
 				INFOPLIST_PREPROCESS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = MOEDict;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
