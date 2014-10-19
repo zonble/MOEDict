@@ -1,166 +1,165 @@
 <html><head>
-	<meta charset="utf-8">
-	<meta name="apple-itunes-app" content="app-id=601941116">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>三隻小豬 3 Piggies</title>
-
-	
-	<script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;appId=385205984962960&amp;version=v2.0"></script>
-	
-
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="apple-itunes-app" content="app-id=601941116">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>三隻小豬 3 Piggies</title>
+    <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;appId=385205984962960&amp;version=v2.0"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
 <style>
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
 html, body, #content {
-	margin: 0px;
-	height: 100%;
-	font-family: sans-serif;
-	font-weight: lighter;
-	color: #9b5f69;
-	background-color: #fcfafb;
-	text-align: center;
-	line-height: 1.4;
+    margin: 0px;
+    height: 100%;
+    font-family: sans-serif;
+    font-weight: lighter;
+    color: #9b5f69;
+    background-color: #fcfafb;
+    text-align: center;
+    line-height: 1.4;
 }
 #splash {
-	height: 100%;
-	width: 100%;
-	display: table;
-	table-layout: fixed;
-	max-width: 700px;
-	margin: auto;
-	position: relative;
+    height: 100%;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    max-width: 700px;
+    margin: auto;
+    position: relative;
 }
 @media screen and (min-width: 700px) {
-	#splash > div {
-		display: table-cell;
-		vertical-align: middle;
-		padding: 1em;
-		height: 100%;
-	}
-	#splash #left {
-		text-align: right;
-	}
-	#splash #right {
-		text-align: left;
-	}
-	#splash .iphone {
-		width: 288px;
-		height: 576px;
-	}
-	#screenshots img {
-		max-width: 200px;
-	}
-	#like-container {
-		position: absolute;
-		top: 100%;
-		right: 20px;
-		margin-top: -50px;
-	}
+    #splash > div {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 1em;
+        height: 100%;
+    }
+    #splash #left ul {
+        text-align: left;
+    }
+    #splash #left {
+        text-align: right;
+    }
+    #splash #right {
+        text-align: left;
+    }
+    #splash .iphone {
+        width: 288px;
+        height: 576px;
+    }
+    #screenshots img {
+        max-width: 200px;
+    }
+    #like-container {
+        position: absolute;
+        top: 100%;
+        right: 20px;
+        margin-top: -50px;
+    }
 }
 #chevron {
-	position: absolute;
-	left: 50%;
-	top: 100%;
-	margin-top: -2em;
-	color: #9b5f69;
-	opacity: 0.5;
-	margin-left: -0.5em;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-top: -2em;
+    color: #9b5f69;
+    opacity: 0.5;
+    margin-left: -0.5em;
 }
 @media screen and (max-width: 700px) {
-	#chevron {
-		display: none;
-	}
-	#splash .iphone {
-		width: 192px;
-		height: 384px;
-		display: inline-block;
-	}
-	#splash #left {
-		padding: 10px;
-	}
-	#screenshots img {
-		max-width: 100px;
-	}
-	#splash .appstore {
-		display: none;
-	}
+    #chevron {
+        display: none;
+    }
+    #splash .iphone {
+        width: 192px;
+        height: 384px;
+        display: inline-block;
+    }
+    #splash #left {
+        padding: 10px;
+    }
+    #screenshots img {
+        max-width: 100px;
+    }
+    #splash .appstore {
+        display: none;
+    }
 }
 img.appstore {
-	max-width: 120px;
+    max-width: 120px;
 }
 .iphone {
-	background-image: url('http://app-stop.appspot.com/static/5s.png');
-	background-size: contain;
-	position: relative;
-	width: 720px;
-	height: 1440px;
+    background-image: url('http://app-stop.appspot.com/static/5s.png');
+    background-size: contain;
+    position: relative;
+    width: 720px;
+    height: 1440px;
 }
 .iphone img {
-	position: absolute;
-	top: 17.9%;
-	left: 14%;
-	width: 73%;
+    position: absolute;
+    top: 17.9%;
+    left: 14%;
+    width: 73%;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Raleway", sans-serif;
-	font-weight: normal;
+    font-family: "Raleway", sans-serif;
+    font-weight: normal;
 }
 #icon-row {
-	margin: 30px;
-	margin-top: 40px;
-	margin-bottom: 80px;
-	border-bottom: 1px solid rgba(0,0,0,0.3);
-	position: relative;
+    margin: 30px;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    position: relative;
 }
 #icon-row #icon-container {
-	position: absolute;
-	width: 80px;
-	height: 80px;
-	left: 50%;
-	top: 50%;
-	margin-left: -50px;
-	margin-top: -50px;
-	border: 10px solid #fcfafb;
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    border: 10px solid #fcfafb;
 }
 #icon-row img {
-	width: 100%;
-	border-radius: 19px;
-	box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+    width: 100%;
+    border-radius: 19px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 }
 #description {
-	margin: auto;
-	width: 90%;
-	max-width: 600px;
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
 }
 #screenshots {
-	margin-bottom: 2em;
+    margin-bottom: 2em;
 }
 #screenshots img {
-	border: 1px solid white;
-	box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
-	margin: 1em;
+    border: 1px solid white;
+    box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+    margin: 1em;
 }
 #description {
-	white-space: pre-wrap;
+    white-space: pre-wrap;
 }
 #stars {
-	text-align: center;
-	font-style: italic;
-	font-size: small;
+    text-align: center;
+    font-style: italic;
+    font-size: small;
 }
 #stars span {
-	display: block;
-	font-size: 30px;
-	font-style: normal;
+    display: block;
+    font-size: 30px;
+    font-style: normal;
 }
 #attribution {
-	font-size: small;
-	padding: 2em;
+    font-size: small;
+    padding: 2em;
 }
 #attribution a {
-	color: #9b5f69;
+    color: #9b5f69;
 }
 </style>
 
@@ -170,82 +169,49 @@ h1, h2, h3, h4, h5, h6 {
 .fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(http://static.ak.fbcdn.net/rsrc.php/v2/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
 .fbpluginrecommendationsbarleft,.fbpluginrecommendationsbarright{position:fixed !important;bottom:0;z-index:999}.fbpluginrecommendationsbarleft{left:10px}.fbpluginrecommendationsbarright{right:10px}</style></head>
 <body>
-	<!-- begin Facebook SDK -->
-	<div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://static.ak.facebook.com/connect/xd_arbiter/w9JKbyW340G.js?version=41#channel=f387b6c82&amp;origin=http%3A%2F%2Fapp-stop.appspot.com" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/w9JKbyW340G.js?version=41#channel=f387b6c82&amp;origin=http%3A%2F%2Fapp-stop.appspot.com" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
-	<script>(function(d, s, id) {
-	  var js, fjs = d.getElementsByTagName(s)[0];
-	  if (d.getElementById(id)) return;
-	  js = d.createElement(s); js.id = id;
-	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=385205984962960&version=v2.0";
-	  fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	<!-- end Facebook SDK -->
+    <!-- begin Facebook SDK -->
+    <div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://static.ak.facebook.com/connect/xd_arbiter/w9JKbyW340G.js?version=41#channel=f387b6c82&amp;origin=http%3A%2F%2Fapp-stop.appspot.com" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://s-static.ak.facebook.com/connect/xd_arbiter/w9JKbyW340G.js?version=41#channel=f387b6c82&amp;origin=http%3A%2F%2Fapp-stop.appspot.com" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=385205984962960&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- end Facebook SDK -->
 
-
-	
 <div id="content">
-
 
 <div id="chevron" class="fa fa-chevron-down"></div>
 <div id="splash">
-	<div id="left">
-		<h1>三隻小豬 3 Piggies</h1>
-		<p>「三隻小豬」是一套基於 3du.tw 計畫所產出的成果，所製作的教育部國語詞典 iOS 版本，可以在 iOS 裝置上離線搜尋詞彙。功能包括：
-
-- 不需網路連線，即可搜索詞彙
-- 針對 iPhone 與 iPad 設計的極簡 UI 設計</p>
-		<a href="https://itunes.apple.com/us/app/san-zhi-xiao-zhu-3-piggies/id601941116?mt=8&amp;uo=4"><img class="appstore" src="http://app-stop.appspot.com/static/appstore.svg" alt="Download on the Apple App Store"></a>
-	</div>
-	<div id="right">
-		<div class="iphone">
-			<img src="http://a5.mzstatic.com/us/r30/Purple5/v4/87/b8/13/87b81311-bab4-bb2d-3e3d-ea30a3673ea3/screen1136x1136.jpeg">
-		</div>
-	</div>
+  <div id="left">
+        <h1>三隻小豬</h1>
+        <p>「三隻小豬」是一套基於 3du.tw 計畫所產出的成果，所製作的教育部國語詞典 iOS 版本，可以在 iOS 裝置上離線搜尋詞彙。</p>
+		<p>功能包括：</p>
+		<p>- 不需網路連線，即可搜索詞彙<br>- 針對 iPhone 與 iPad 的極簡 UI 設計</p>
+        <a href="https://itunes.apple.com/us/app/san-zhi-xiao-zhu-3-piggies/id601941116?mt=8&amp;uo=4"><img class="appstore" src="http://app-stop.appspot.com/static/appstore.svg" alt="Download on the Apple App Store"></a>
+		<p>2014 © Weizhong Yang (a.k.a zonble)</p>
+    </div>
+    <div id="right">
+        <div class="iphone">
+            <img src="http://a5.mzstatic.com/us/r30/Purple5/v4/87/b8/13/87b81311-bab4-bb2d-3e3d-ea30a3673ea3/screen1136x1136.jpeg">
+        </div>
+    </div>
 </div>
-
-<div id="icon-row">
-	<div id="icon-container">
-		<img src="http://a904.phobos.apple.com/us/r30/Purple5/v4/c3/df/6d/c3df6d8d-22d6-501e-3b84-20edb8227430/mzl.iwohtwpx.png">
-	</div>
-</div>
-
-<div id="screenshots">
-	
-</div>
-
-
-
-<p id="description">「三隻小豬」是一套基於 3du.tw 計畫所產出的成果，所製作的教育部國語詞典 iOS 版本，可以在 iOS 裝置上離線搜尋詞彙。功能包括：
-
-- 不需網路連線，即可搜索詞彙
-- 針對 iPhone 與 iPad 設計的極簡 UI 設計</p>
 
 <p>
-	<a href="https://itunes.apple.com/us/app/san-zhi-xiao-zhu-3-piggies/id601941116?mt=8&amp;uo=4"><img class="appstore" src="http://app-stop.appspot.com/static/appstore.svg" alt="Download on the Apple App Store"></a>
-</p>
-
-<p>
-	</p><div id="like-container"><div class="fb-like fb_iframe_widget" data-href="http://app-stop.appspot.com/id/601941116" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=385205984962960&amp;href=http%3A%2F%2Fapp-stop.appspot.com%2Fid%2F601941116&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true"><span style="vertical-align: bottom; width: 121px; height: 20px;"><iframe name="f12368bcfc" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/like.php?action=like&amp;app_id=385205984962960&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2Fw9JKbyW340G.js%3Fversion%3D41%23cb%3Df3f330ea%26domain%3Dapp-stop.appspot.com%26origin%3Dhttp%253A%252F%252Fapp-stop.appspot.com%252Ff387b6c82%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fapp-stop.appspot.com%2Fid%2F601941116&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true" class="" style="border: none; visibility: visible; width: 121px; height: 20px;"></iframe></span></div></div>
-	<script>
-	// dynamically create a Facebook like button for the current URL:
-	var like = document.createElement("div");
-	like.className = "fb-like";
-	like.setAttribute("data-href", location.href);
-	like.setAttribute("data-layout", "button_count");
-	like.setAttribute("data-action", "like");
-	like.setAttribute("data-show-faces", "true");
-	like.setAttribute("data-share", "true");
-	document.getElementById("like-container").appendChild(like);
-	</script>
-<p></p>
-
-<p id="copyright">© 維中 楊 </p>
-
-<p id="attribution">
-Landing page created automatically with <a href="http://app-stop.appspot.com">AppStop</a></p>
-
+    </p><div id="like-container"><div class="fb-like fb_iframe_widget" data-href="http://app-stop.appspot.com/id/601941116" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=385205984962960&amp;href=http%3A%2F%2Fapp-stop.appspot.com%2Fid%2F601941116&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true"><span style="vertical-align: bottom; width: 121px; height: 20px;"><iframe name="f12368bcfc" width="1000px" height="1000px" frameborder="0" allowtransparency="true" scrolling="no" title="fb:like Facebook Social Plugin" src="http://www.facebook.com/v2.0/plugins/like.php?action=like&amp;app_id=385205984962960&amp;channel=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2Fw9JKbyW340G.js%3Fversion%3D41%23cb%3Df3f330ea%26domain%3Dapp-stop.appspot.com%26origin%3Dhttp%253A%252F%252Fapp-stop.appspot.com%252Ff387b6c82%26relation%3Dparent.parent&amp;href=http%3A%2F%2Fapp-stop.appspot.com%2Fid%2F601941116&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;share=true&amp;show_faces=true" class="" style="border: none; visibility: visible; width: 121px; height: 20px;"></iframe></span></div></div>
+    <script>
+    // dynamically create a Facebook like button for the current URL:
+    var like = document.createElement("div");
+    like.className = "fb-like";
+    like.setAttribute("data-href", location.href);
+    like.setAttribute("data-layout", "button_count");
+    like.setAttribute("data-action", "like");
+    like.setAttribute("data-show-faces", "true");
+    like.setAttribute("data-share", "true");
+    document.getElementById("like-container").appendChild(like);
+    </script>
 
 </div>
-
-
 </body></html>
