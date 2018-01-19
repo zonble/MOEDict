@@ -1,4 +1,3 @@
-#import <QuartzCore/QuartzCore.h>
 #import "MDViewController.h"
 
 @interface MDViewController ()
@@ -49,7 +48,7 @@
 		[v setBackgroundColor:[UIColor whiteColor]];
 		v.layer.shadowOffset = CGSizeZero;
 		if ([v isKindOfClass:[UIImageView class]]) {
-			[(UIImageView *)v setImage:nil];
+			[(UIImageView *) v setImage:nil];
 		}
 	}
 	[self.view addSubview:self.webView];
@@ -161,12 +160,15 @@
 	}
 	return YES;
 }
+
 - (void)webViewDidStartLoad:(UIWebView *)webView
 {
 }
+
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
 }
+
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
 }

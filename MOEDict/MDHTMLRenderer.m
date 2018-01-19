@@ -28,9 +28,7 @@
 	NSMutableString *s = [NSMutableString string];
 	[s appendFormat:@"<html><head><style>%@</style></head><body>", self.CSS];
 	if (inDictionary[kMDTitleKey]) {
-		[s appendFormat:@"<h1 class=\"%@\">%@</h1>",
-		 (inDictionary[kMDRadicalKey] || inDictionary[kMDStrokeCountKey] || inDictionary[kMDNonRadicalStrokeCountKey]) ? @"char_title" : @"phrase_title",
-			inDictionary[kMDTitleKey]];
+		[s appendFormat:@"<h1 class=\"%@\">%@</h1>", (inDictionary[kMDRadicalKey] || inDictionary[kMDStrokeCountKey] || inDictionary[kMDNonRadicalStrokeCountKey]) ? @"char_title" : @"phrase_title", inDictionary[kMDTitleKey]];
 	}
 	if (inDictionary[kMDRadicalKey] || inDictionary[kMDStrokeCountKey] || inDictionary[kMDNonRadicalStrokeCountKey]) {
 		[s appendString:@"<div class=\"char_info\">"];

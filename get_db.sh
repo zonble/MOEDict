@@ -13,15 +13,15 @@ curl -O https://raw.github.com/g0v/moedict-epub/master/db2unicode.pl
 
 echo ""
 echo "Convert image to unicode by moedict-epub "
-perl db2unicode.pl | sqlite3 dict-revised.unicode.sqlite3  2>&1 > /dev/null
+perl db2unicode.pl | sqlite3 dict-revised.sqlite3  2>&1 > /dev/null
 
 # create index
-if [ -f dict-revised.unicode.sqlite3 ]; then
+if [ -f dict-revised.sqlite3 ]; then
     echo "Create dict indices"
-    sqlite3 dict-revised.unicode.sqlite3 'CREATE INDEX "index_entries_title" ON "entries" ("title")'
+    sqlite3 dict-revised.sqlite3 'CREATE INDEX "index_entries_title" ON "entries" ("title")'
 
     rm -f sym.txt
     rm -f db2unicode.pl
-	rm -f dict-revised.sqlite3*
-    mv dict-revised.unicode.sqlite3 ./MOEDict/db.sqlite3
+	# rm -f dict-revised.sqlite3*
+    mv dict-revised.sqlite3 ./MOEDict/db.sqlite3
 fi

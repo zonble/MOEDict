@@ -1,4 +1,3 @@
-#import <QuartzCore/QuartzCore.h>
 #import "MDIPadViewController.h"
 
 @interface MDIPadMainView : UIView
@@ -48,7 +47,7 @@
 		[v setBackgroundColor:[UIColor whiteColor]];
 		v.layer.shadowOffset = CGSizeZero;
 		if ([v isKindOfClass:[UIImageView class]]) {
-			[(UIImageView *)v setImage:nil];
+			[(UIImageView *) v setImage:nil];
 		}
 	}
 	self.leftView = [[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 320.0, self.view.bounds.size.height)] autorelease];;
@@ -68,8 +67,8 @@
 
 	[self.leftView addSubview:self.tableView];
 
-	[(MDIPadMainView *)self.view setLeftView:self.leftView];
-	[(MDIPadMainView *)self.view setRightView:self.webView];
+	[(MDIPadMainView *) self.view setLeftView:self.leftView];
+	[(MDIPadMainView *) self.view setRightView:self.webView];
 }
 
 - (void)searchWithKeyword:(NSString *)inKeyword
@@ -84,8 +83,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
-	NSDictionary *d = [self.prefixArray objectAtIndex:indexPath.row];
-	NSInteger entryID = [[d objectForKey:kMDIdentifierKey] integerValue];
+	NSDictionary *d = self.prefixArray[indexPath.row];
+	NSInteger entryID = [d[kMDIdentifierKey] integerValue];
 	[self.db fetchDefinitionsWithID:entryID callback:^(NSDictionary *response) {
 		NSString *HTML = [self.HTMLRenderer renderHTML:response];
 		[self.webView loadHTMLString:HTML baseURL:nil];

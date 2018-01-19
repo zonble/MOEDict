@@ -6,12 +6,12 @@
 {
 	[_window release];
 	[_rootViewController release];
-    [super dealloc];
+	[super dealloc];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+	NSString *version = [NSBundle mainBundle].infoDictionary[@"CFBundleVersion"];
 	[[NSUserDefaults standardUserDefaults] setObject:version forKey:@"version_preference"];
 
 	if ([[UIDevice currentDevice].systemVersion doubleValue] < 7.0) {
@@ -25,26 +25,30 @@
 		[[UISearchBar appearance] setBackgroundImage:whiteImage];
 	}
 
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+	self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 	self.window.backgroundColor = [UIColor whiteColor];
 	self.rootViewController = [[[IsIPad() ? [MDIPadViewController class] : [MDViewController class] alloc] init] autorelease];
 	self.window.rootViewController = self.rootViewController;
-    [self.window makeKeyAndVisible];
-    return YES;
+	[self.window makeKeyAndVisible];
+	return YES;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
 }
+
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
 }
+
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
 }
+
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
 }
+
 - (void)applicationWillTerminate:(UIApplication *)application
 {
 }

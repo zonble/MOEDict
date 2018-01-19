@@ -1,6 +1,5 @@
 #import "MDDatabase.h"
 #import "ObjSqliteDB.h"
-#import "ObjSqliteStatement.h"
 
 NSString *const kMDIdentifierKey = @"id";
 NSString *const kMDTitleKey = @"title";
@@ -40,7 +39,7 @@ NSString *const kMDLinkKey = @"link";
 	if (self) {
 		db = [[ObjSqliteDB alloc] initWithPath:inPath];
 		NSAssert(db != nil, @"Database must be created.");
-		__unused sqlite3* ObjSqliteDB = db.sqliteDB;
+		__unused sqlite3 *ObjSqliteDB = db.sqliteDB;
 		NSAssert(ObjSqliteDB != nil, @"Database must be created.");
 		operationQueue = [[NSOperationQueue alloc] init];
 		[operationQueue setMaxConcurrentOperationCount:1];
@@ -48,7 +47,7 @@ NSString *const kMDLinkKey = @"link";
 	return self;
 }
 
-- (void)_fetchCompletionListWithString:(NSString *)inStr callback:(void(^)(NSArray *))inCallback
+- (void)_fetchCompletionListWithString:(NSString *)inStr callback:(void (^)(NSArray *))inCallback
 {
 	if (!inStr || ![inStr length]) {
 		return;
@@ -62,7 +61,7 @@ NSString *const kMDLinkKey = @"link";
 		NSInteger entryID = [statement intFromColumn:0];
 		NSString *title = [statement textFromColumn:1];
 		if (entryID) {
-			[list addObject:@{kMDIdentifierKey:@(entryID), kMDTitleKey:title}];
+			[list addObject:@{kMDIdentifierKey: @(entryID), kMDTitleKey: title}];
 		}
 	}
 	[statement release];
@@ -71,7 +70,7 @@ NSString *const kMDLinkKey = @"link";
 	});
 }
 
-- (void)fetchCompletionListWithString:(NSString *)inStr callback:(void(^)(NSArray *))inCallback
+- (void)fetchCompletionListWithString:(NSString *)inStr callback:(void (^)(NSArray *))inCallback
 {
 	if (!inStr || ![inStr length]) {
 		return;
@@ -84,7 +83,7 @@ NSString *const kMDLinkKey = @"link";
 	[operationQueue addOperation:op];
 }
 
-- (void)_fetchDefinitionsWithID:(NSInteger)inEntryID callback:(void(^)(NSDictionary *))inCallback;
+- (void)_fetchDefinitionsWithID:(NSInteger)inEntryID callback:(void (^)(NSDictionary *))inCallback;
 {
 	NSMutableDictionary *response = [NSMutableDictionary dictionary];
 
@@ -96,13 +95,17 @@ NSString *const kMDLinkKey = @"link";
 	NSString *radical = [statement textFromColumn:1];
 	NSString *strokeCount = [statement textFromColumn:2];
 	NSString *nonRadicalStrokeCount = [statement textFromColumn:3];
-	if (title) { [response setObject:title forKey:kMDTitleKey]; }
-	if (radical) { [response setObject:radical forKey:kMDRadicalKey]; }
+	if (title) {
+		response[kMDTitleKey] = title;
+	}
+	if (radical) {
+		response[kMDRadicalKey] = radical;
+	}
 	if (strokeCount) {
-		[response setObject:[NSDecimalNumber decimalNumberWithString:strokeCount] forKey:kMDStrokeCountKey];
+		response[kMDStrokeCountKey] = [NSDecimalNumber decimalNumberWithString:strokeCount];
 	}
 	if (nonRadicalStrokeCount) {
-		[response setObject:[NSDecimalNumber decimalNumberWithString:nonRadicalStrokeCount] forKey:kMDNonRadicalStrokeCountKey];
+		response[kMDNonRadicalStrokeCountKey] = [NSDecimalNumber decimalNumberWithString:nonRadicalStrokeCount];
 	}
 
 	const char *heteronymSQL = "SELECT id, bopomofo, bopomofo2, pinyin FROM heteronyms WHERE entry_id = ?";
@@ -116,17 +119,23 @@ NSString *const kMDLinkKey = @"link";
 		NSString *pinyin = [heteronymStatement textFromColumn:3];
 		if (heteronymID) {
 			NSMutableDictionary *d = [NSMutableDictionary dictionary];
-			[d setObject:@(heteronymID) forKey:kMDIdentifierKey];
-			if (bopomofo) { [d setObject:bopomofo forKey:kMDBopomofo1Key]; }
-			if (bopomofo2) { [d setObject:bopomofo2 forKey:kMDBopomofo2Key]; }
-			if (pinyin) { [d setObject:pinyin forKey:kMDPinyinKey]; }
+			d[kMDIdentifierKey] = @(heteronymID);
+			if (bopomofo) {
+				d[kMDBopomofo1Key] = bopomofo;
+			}
+			if (bopomofo2) {
+				d[kMDBopomofo2Key] = bopomofo2;
+			}
+			if (pinyin) {
+				d[kMDPinyinKey] = pinyin;
+			}
 			[list addObject:d];
 		}
 	}
 	[heteronymStatement release];
 
 	for (NSMutableDictionary *heteronym in list) {
-		NSInteger heteronymID = [[heteronym objectForKey:kMDIdentifierKey] integerValue];
+		NSInteger heteronymID = [heteronym[kMDIdentifierKey] integerValue];
 		const char *definitionSQL = "SELECT id, type, def, example, synonyms, antonyms, source, quote, link FROM definitions WHERE heteronym_id = ?";
 		ObjSqliteStatement *definitionStatement = [[ObjSqliteStatement alloc] initWithSQL:definitionSQL db:db];
 		[definitionStatement bindInt:heteronymID toColumn:1];
@@ -143,33 +152,43 @@ NSString *const kMDLinkKey = @"link";
 			NSString *link = [definitionStatement textFromColumn:8];
 			if (definitionID) {
 				NSMutableDictionary *d = [NSMutableDictionary dictionary];
-				if (typeString) { [d setObject:typeString forKey:@"type"]; }
-				if (definition) { [d setObject:definition forKey:kMDDefinitionKey]; }
-				if (example) { [d setObject:example forKey:kMDExcampleKey]; }
-				if (source) { [d setObject:source forKey:kMDSourceKey]; }
-				if (link) { [d setObject:link forKey:kMDLinkKey]; }
+				if (typeString) {
+					d[@"type"] = typeString;
+				}
+				if (definition) {
+					d[kMDDefinitionKey] = definition;
+				}
+				if (example) {
+					d[kMDExcampleKey] = example;
+				}
+				if (source) {
+					d[kMDSourceKey] = source;
+				}
+				if (link) {
+					d[kMDLinkKey] = link;
+				}
 				if (synonyms) {
-					[d setObject:[synonyms componentsSeparatedByString:@","] forKey:kMDSynonymsKey];
+					d[kMDSynonymsKey] = [synonyms componentsSeparatedByString:@","];
 				}
 				if (antonyms) {
-					[d setObject:[antonyms componentsSeparatedByString:@","] forKey:kMDAntonymsKey];
+					d[kMDAntonymsKey] = [antonyms componentsSeparatedByString:@","];
 				}
 				if (quote) {
-					[d setObject:[quote componentsSeparatedByString:@","] forKey:kMDQuoteKey];
+					d[kMDQuoteKey] = [quote componentsSeparatedByString:@","];
 				}
 				[definitions addObject:d];
 			}
 		}
 		[definitionStatement release];
-		[heteronym setObject:definitions forKey:kMDDefinitionsKey];
+		heteronym[kMDDefinitionsKey] = definitions;
 	}
-	[response setObject:list forKey:kMDBHeteronymsKey];
+	response[kMDBHeteronymsKey] = list;
 	dispatch_async(dispatch_get_main_queue(), ^{
 		inCallback(response);
 	});
 }
 
-- (void)fetchDefinitionsWithID:(NSInteger)inEntryID callback:(void(^)(NSDictionary *))inCallback
+- (void)fetchDefinitionsWithID:(NSInteger)inEntryID callback:(void (^)(NSDictionary *))inCallback
 {
 	NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
 		[self _fetchDefinitionsWithID:inEntryID callback:inCallback];
@@ -179,9 +198,9 @@ NSString *const kMDLinkKey = @"link";
 }
 
 - (NSInteger)_entryIDWithKeyword:(NSString *)inKeyword
-{	
+{
 	const char *SQL = "SELECT id,title FROM entries WHERE title = ?";
-	ObjSqliteStatement *statement = [[ObjSqliteStatement alloc] initWithSQL:SQL db:db];
+	ObjSqliteStatement *statement = [[[ObjSqliteStatement alloc] initWithSQL:SQL db:db] autorelease];
 	[statement bindText:inKeyword toColumn:1];
 	[statement step];
 	NSInteger index = [statement intFromColumn:0];
@@ -192,7 +211,7 @@ NSString *const kMDLinkKey = @"link";
 	return index;
 }
 
-- (void)fetchDefinitionsWithKeyword:(NSString *)inKeyword callback:(void(^)(NSDictionary *))inCallback
+- (void)fetchDefinitionsWithKeyword:(NSString *)inKeyword callback:(void (^)(NSDictionary *))inCallback
 {
 	if (!inKeyword || ![inKeyword length]) {
 		return;
