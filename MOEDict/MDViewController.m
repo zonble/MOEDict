@@ -32,6 +32,7 @@
 {
 	self.view = [[[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds] autorelease];
 	self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+
 	self.searchBar = [[[UISearchBar alloc] initWithFrame:CGRectMake(0.0, 0.0, self.view.bounds.size.width, 44.0)] autorelease];
 	self.searchBar.delegate = self;
 	self.searchBar.placeholder = NSLocalizedString(@"Your Keyword", @"");
@@ -53,10 +54,29 @@
 	}
 	[self.view addSubview:self.webView];
 
-	self.view.backgroundColor = [UIColor whiteColor];
-	self.searchBar.frame = CGRectMake(0.0, 20.0, self.view.bounds.size.width, 44.0);
 	self.searchBar.searchBarStyle = UISearchBarStyleMinimal;
+	self.searchBar.frame = CGRectMake(0.0, 20.0, self.view.bounds.size.width, 44.0);
 	self.webView.frame = CGRectMake(0.0, 64.0, self.view.bounds.size.width, self.view.bounds.size.height - 64.0);
+
+	self.view.backgroundColor = [UIColor whiteColor];
+	self.webView.backgroundColor = [UIColor whiteColor];
+}
+
+- (void)viewDidLayoutSubviews
+{
+	if (@available(iOS 11.0, *)) {
+		UIEdgeInsets safeArea = self.view.safeAreaInsets;
+		CGFloat top = safeArea.top;
+		if (top < 20) {
+			top = 20;
+		}
+		self.searchBar.frame = CGRectMake(0.0, top, self.view.bounds.size.width, 44.0);
+		self.webView.frame = CGRectMake(0.0, top + 44, self.view.bounds.size.width, self.view.bounds.size.height - (top + 44));
+	}
+	else {
+		self.searchBar.frame = CGRectMake(0.0, 20.0, self.view.bounds.size.width, 44.0);
+		self.webView.frame = CGRectMake(0.0, 64.0, self.view.bounds.size.width, self.view.bounds.size.height - 64.0);
+	}
 }
 
 - (void)viewDidLoad
